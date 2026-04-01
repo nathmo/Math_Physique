@@ -1,0 +1,189 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{tcolorbox}
+\usepackage{geometry}
+\usepackage{pgfplots}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+
+\geometry{margin=2cm}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\textbf{Énergie, travail et puissance}}
+\rhead{\thepage}
+
+\tcbset{colback=white,colframe=black!70!black,sharp corners,boxrule=0.8pt}
+
+\newcommand{\rulebox}[3]{
+\begin{tcolorbox}[colback=#1!10!white,colframe=#1!60!black,title=\textbf{#2}]
+#3
+\end{tcolorbox}
+}
+
+\newcommand{\gridspace}{
+\vspace{0.5cm}
+\begin{tikzpicture}[scale=0.5]
+\draw[step=0.5cm,gray!30,very thin] (0,0) grid (27,8);
+\end{tikzpicture}
+\vspace{0.5cm}
+}
+
+\begin{document}
+
+\begin{center}
+{\LARGE \textbf{Feuille de Révision : Énergie, travail et puissance}}\\[0.5cm]
+{\large Formules, transformations et applications}
+\end{center}
+
+%------------------------------------
+% SECTION 1 : NOTION D'ÉNERGIE
+%------------------------------------
+\rulebox{blue}{Qu’est-ce que l’énergie ?}{
+L’énergie est une grandeur physique qui mesure la capacité d’un système à produire un effet (mouvement, chaleur, lumière, etc.).  
+Elle se conserve : elle ne se crée ni ne se perd, elle se transforme.
+
+\[
+E_\text{entrée} = E_\text{sortie} + E_\text{perdue}
+\]
+
+L’unité SI de l’énergie est le joule (J).
+}
+
+%------------------------------------
+% SECTION 2 : LES TYPES D’ÉNERGIE
+%------------------------------------
+\rulebox{green}{Les formes d’énergie et leurs formules principales}{
+\begin{itemize}
+\item \textbf{Énergie potentielle de pesanteur :}
+\[
+E_p = m g h
+\]
+où $m$ = masse (kg), $g$ = 9,81 m/s², $h$ = hauteur (m)
+
+\item \textbf{Énergie cinétique :}
+\[
+E_c = \frac{1}{2} m v^2
+\]
+où $v$ = vitesse (m/s) et $m$ = masse (kg)
+
+\item \textbf{Énergie élastique (ressort) :}
+\[
+E_{é} = \frac{1}{2} k x^2
+\]
+où $k$ = raideur (N/m), $x$ = allongement (m)
+
+\item \textbf{Énergie électrique :}
+\[
+E_{el} = U I t
+\]
+où $U$ = tension (V), $I$ = courant (A), $t$ = temps (s)
+
+\item \textbf{Énergie thermique :}
+\[
+E_{th} = m c \Delta T
+\]
+où $c$ = capacité thermique (J/kg·K), $m$ = masse (kg) et $\Delta T$ la différence de temperature en °C ou °K
+
+\item \textbf{Énergie chimique :} stockée dans les liaisons moléculaires (pile, carburant)
+
+\item \textbf{Puissance :}
+\[
+P = \frac{E}{t}
+\]
+ou encore $P = F v$ pour la puissance mécanique instantanée.
+\end{itemize}
+}
+
+%------------------------------------
+% SECTION 3 : TRAVAIL ET PUISSANCE
+%------------------------------------
+\rulebox{orange}{Travail et puissance}{
+Le \textbf{travail} d’une force correspond à l’énergie transférée par cette force :
+\[
+W = F \times d \times \cos(\theta)
+\]
+
+La \textbf{puissance} est le débit d’énergie :
+\[
+P = \frac{W}{t}
+\]
+\textit{(analogie : puissance ↔ débit d’eau)}
+}
+
+\newpage
+\begin{center}
+{\LARGE \textbf{Exercices 1 : Énergies mécaniques}}
+\end{center}
+
+\begin{enumerate}
+\item Calculer l’énergie potentielle d’un objet de $2$ kg placé à $h=5$ m. ($g=9.81$ m/s²)\\
+\gridspace
+\item Une voiture de $1000$ kg roule à $20$ m/s. Calculer son énergie cinétique.\\
+\gridspace
+\item Une balle de $0.1$ kg tombe d’une hauteur de $10$ m. Quelle est son énergie cinétique juste avant l’impact (en supposant $E_p=E_c$) ?\\
+\gridspace
+\item Un ressort ($k=200$ N/m) est étiré de $5$ cm. Quelle énergie emmagasine-t-il ?\\
+\gridspace
+\end{enumerate}
+
+
+\newpage
+\begin{center}
+{\LARGE \textbf{Exercices 2 : Énergies électriques et thermiques}}
+\end{center}
+
+
+\begin{enumerate}
+\item Une ampoule de $10$ W fonctionne pendant $2$ h. Quelle énergie consomme-t-elle (en J et en Wh) ?\\
+\gridspace
+\item Un radiateur de $2$ kW chauffe $10$ kg d’eau pendant $10$ min. Quelle hausse de température ($\Delta T$) obtient-on ? ($c = 4180$ J/kg·K)\\
+\gridspace
+\item Un panneau solaire de surface $1.5$ m² reçoit $1000$ W/m² avec un rendement de $20\%$. Quelle puissance électrique fournit-il ?\\
+\gridspace
+\item Un moteur consomme $12$ V et $2$ A pendant $10$ min. Quelle énergie a-t-il utilisée ?\\
+\gridspace
+\end{enumerate}
+
+
+\newpage
+\begin{center}
+{\LARGE \textbf{Exercices 3 : Proportion et raisonnement}}
+\end{center}
+
+
+\begin{enumerate}
+\item Une maison a besoin de $10$ kWh/jour. Le soleil fournit $1000$ W/m², le rendement des panneaux est de $20\%$, et la durée d’ensoleillement utile est $6$ h.  
+Quelle surface de panneaux faut-il installer ?\\
+\gridspace
+\item Une batterie de $3.2$ V et $20$ Ah alimente une lampe de $0.5$ W. Combien de temps (en heures) peut-elle rester allumée ?\\
+\gridspace
+\item Un robinet débite $10$ L/min. Combien de temps faut-il pour remplir une baignoire de $150$ L ?\\
+\gridspace
+\item Une voiture de $1000$ kg double sa vitesse de $10$ à $20$ m/s. Quelle quantité d’énergie supplémentaire faut-il fournir ?\\
+\gridspace
+\end{enumerate}
+
+
+\newpage
+\begin{center}
+{\LARGE \textbf{Exercices 4 : Puissance et travail}}
+\end{center}
+
+
+\begin{enumerate}
+\item Un ascenseur de $500$ kg monte de $10$ m en $20$ s. Quelle puissance moyenne le moteur développe-t-il ?\\
+\gridspace
+\item Un cycliste développe $250$ W. Combien d’énergie fournit-il en 1 minute ?\\
+\gridspace
+\item Une chute d’eau de $5$ m de haut alimente une turbine traversée par un débit de $0.1$ m³/s. Calculer la puissance hydraulique théorique disponible. ($\rho=1000$ kg/m³, $g=9.81$ m/s²)\\
+\gridspace
+\item Une voiture consomme $1.5$ MJ pour parcourir $1$ km à 90 km/h. Quelle puissance moyenne développe-t-elle à $90$ km/h ?\\
+\gridspace
+\end{enumerate}
+
+
+\end{document}

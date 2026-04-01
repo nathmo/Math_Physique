@@ -1,0 +1,791 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------- PACKAGES ----------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{siunitx}
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+
+\geometry{margin=2cm}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\textbf{Puissance et Énergie}}
+\rhead{\thepage}
+
+% ---------------- COULEURS ----------------
+\definecolor{energyblue}{RGB}{30,80,160}
+\definecolor{powerred}{RGB}{180,50,50}
+\definecolor{warningred}{RGB}{200,30,30}
+\definecolor{graybg}{RGB}{245,245,245}
+
+% ---------------- TCOLORBOX ----------------
+\tcbset{
+  sharp corners,
+  colback=white,
+  colframe=black!60,
+  boxrule=0.8pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt
+}
+
+\newcommand{\theorybox}[2]{
+\begin{tcolorbox}[title=\textbf{#1}]
+#2
+\end{tcolorbox}
+}
+
+% ---------------- GRILLE EXERCICES ----------------
+\newcommand{\fullgrid}{
+\vfill
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+\draw[step=0.5cm,gray!30,very thin] (0,0) grid (18,22);
+\end{tikzpicture}
+\end{center}
+\vfill
+}
+
+\newcommand{\threequartergrid}{
+\vfill
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+\draw[step=0.5cm,gray!30,very thin] (0,0) grid (18,18);
+\end{tikzpicture}
+\end{center}
+\vfill
+}
+
+\begin{document}
+
+% =================================================
+% PAGE DE TITRE
+% =================================================
+
+\begin{center}
+{\LARGE \textbf{Puissance et Énergie}}\\[0.3cm]
+{\large Rappels de base, unités SI, conversions et exercices}\\[0.5cm]
+\end{center}
+
+% =================================================
+% PARTIE I : RAPPELS THÉORIQUES
+% =================================================
+
+\section*{I - Rappels fondamentaux}
+
+% -------------------------------------------------
+\theorybox{A - Les 7 unités de base du Système International (SI)}{
+Le Système International repose sur \textbf{7 unités fondamentales}.  
+Toutes les autres unités sont construites à partir d’elles.
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Grandeur} & \textbf{Unité} & \textbf{Symbole} \\
+\hline
+Longueur & mètre & m \\
+Masse & kilogramme & kg \\
+Temps & seconde & s \\
+Courant électrique & ampère & A \\
+Température & kelvin & K \\
+Quantité de matière & mole & mol \\
+Intensité lumineuse & candela & cd \\
+\hline
+\end{tabular}
+\end{center}
+}
+
+% -------------------------------------------------
+\theorybox{B - Unités dérivées courantes}{
+Les unités dérivées sont des combinaisons des unités SI de base.
+
+\begin{itemize}
+\item Distance : cm, km (mais \textbf{le mètre est l’unité SI})
+\item Masse : g, tonne (mais \textbf{le kilogramme est l’unité SI})
+\item Volume : litre (L), m$^3$ (\textbf{toujours ramener en m$^3$})
+\item Vitesse : m/s, km/h
+\item Énergie : joule (J)
+\item Température : °C (attention : le SI est le kelvin)
+\item Charge électrique : coulomb (C) / ampère-heure (Ah)
+\item Tension électrique : volt (V)
+
+\end{itemize}
+
+Exemples de conversion et relations :
+\[
+1\,\si{L} = 10^{-3}\,\si{m^3}
+\qquad
+1\,\si{km/h} = \frac{1000}{3600}\,\si{m/s}
+\]
+
+Relations électriques :
+\[
+1\,\si{C} = 1\,\si{A} \cdot 1\,\si{s}
+\qquad
+1\,\si{V} = 1\,\frac{\si{J}}{\si{C}} = 1\,\frac{kg \cdot m^2}{s^3 \cdot A}
+\qquad
+1\,\si{Ah} = 3600\,\si{C}
+\]
+}
+
+% -------------------------------------------------
+\theorybox{C - RÈGLE ABSOLUE - UNITÉS SI}{
+\centering
+\textbf{\Large TOUT DOIT ÊTRE EN UNITÉS SI AVANT D’UTILISER UNE FORMULE}
+
+\vspace{0.2cm}
+
+Pas de grammes.  
+Pas de tonnes.  
+Pas de kilomètres.  
+Pas de centimètres.  
+
+\textbf{kg, m, s, A, K.}
+
+Sinon, \textbf{le résultat est faux}, même si le calcul est juste.
+}
+
+% -------------------------------------------------
+\theorybox{D - Conversion par déplacement de la virgule (longueurs, masses)}{
+Pour les longueurs et les masses, on utilise une \textbf{table de conversion décimale}.
+
+Exemple : Conversion de $1470\,\si{mm}$ en mètres
+\textbf{Table de conversion :}
+
+\begin{center}
+\begin{tabular}{c|c|c|c|c|c|c}
+km & hm & dam & m & dm & cm & mm \\
+\hline
+   &    &     & 1 & 4  & 7  & 0  \\
+\end{tabular}
+\end{center}
+
+Chaque déplacement d’une colonne vers la gauche correspond à une division par 10.
+
+\vspace{0.2cm}
+
+\textbf{Écriture décimale avec déplacement de la virgule :}
+
+\[
+1470\,\si{mm}
+\;\longrightarrow\;
+147.\!0\,\si{cm}
+\;\longrightarrow\;
+14.\!70\,\si{dm}
+\;\longrightarrow\;
+1.\!470\,\si{m}
+\]
+
+\vspace{0.2cm}
+
+\textbf{Résultat final :}
+
+\[
+1470\,\si{mm} = 1.47\,\si{m}
+\]
+
+
+
+
+Chaque déplacement vers la droite multiplie par 10.  
+Chaque déplacement vers la gauche divise par 10.
+
+Exemple :
+\[
+250\,\si{cm} = 2.5\,\si{m}
+\qquad
+3.2\,\si{km} = 3200\,\si{m}
+\]
+}
+
+% -------------------------------------------------
+\theorybox{E - Conversion des surfaces et volumes (tableau dimensionnel)}{
+
+\textbf{Principe visuel :}
+
+\begin{itemize}
+\item Surface $\rightarrow$ deux dimensions $\rightarrow$ \textbf{deux zéros}
+\item Volume $\rightarrow$ trois dimensions $\rightarrow$ \textbf{trois zéros}
+\end{itemize}
+
+\vspace{0.2cm}
+
+% ================= SURFACES =================
+\textbf{Exemple - Conversion de $25\,\si{cm^2}$ en $\si{m^2}$}
+
+\begin{center}
+\textbf{Tableau des surfaces}
+\begin{tabular}{c|c|c|c|c|c|c}
+km$^2$ & hm$^2$ & dam$^2$ & m$^2$ & dm$^2$ & cm$^2$ & mm$^2$ \\
+\hline
+       &        &         & 0 0 & 2 5 &       &        \\
+\end{tabular}
+\end{center}
+
+Lecture du tableau :
+\[
+25\,\si{cm^2} = 0.0025\,\si{m^2}
+\]
+
+\[
+25\,\si{cm^2} = 2.5 \times 10^{-3}\,\si{m^2}
+\]
+
+\vspace{0.4cm}
+
+% ================= VOLUMES =================
+\textbf{Exemple - Conversion de $4\,\si{cm^3}$ en $\si{m^3}$}
+
+\begin{center}
+\textbf{Tableau des volumes}
+\begin{tabular}{c|c|c|c|c|c|c}
+km$^3$ & hm$^3$ & dam$^3$ & m$^3$ & dm$^3$ & cm$^3$ & mm$^3$ \\
+\hline
+       &        &         & 0 0 0 & 0 0 4 &        &        \\
+\end{tabular}
+\end{center}
+
+Lecture du tableau :
+\[
+4\,\si{cm^3} = 0.000004\,\si{m^3}
+\]
+
+\[
+4\,\si{cm^3} = 4 \times 10^{-6}\,\si{m^3}
+\]
+
+\vspace{0.2cm}
+
+\textbf{Message clé :}
+
+Les zéros ne sont pas décoratifs.  
+Ils codent le \textbf{nombre de dimensions}.
+
+}
+
+
+
+% -------------------------------------------------
+\theorybox{F - Conversion par proportion (cas général)}{
+Quand la conversion n’est pas décimale, on utilise une \textbf{proportion}.
+
+Exemples :
+
+\[
+1\,\text{lb} = 453\,\si{g}
+\Rightarrow
+5\,\text{lb} = 5 \times 0.453 = 2.27\,\si{kg}
+\]
+
+\[
+1\,\si{km/h} = \frac{1000}{3600}\,\si{m/s}
+\Rightarrow
+120\,\si{km/h} = 33.3\,\si{m/s}
+\]
+}
+
+
+
+% -------------------------------------------------
+\theorybox{G - Définition de l’énergie (intuition physique)}{
+
+L’énergie ne se voit pas directement, mais on la \textbf{ressent} lorsqu’un effort est nécessaire.
+
+\vspace{0.2cm}
+
+\textbf{Example : Le vélo et la colline}
+
+\vspace{0.2cm}
+
+Un cycliste roule sur du plat, puis arrive au pied d’une colline.
+
+Pour monter, il doit \textbf{fournir un effort} :  
+ses jambes exercent une force pour élever le vélo et le cycliste contre la gravité.
+
+Cette énergie fournie ne disparaît pas.  
+Elle est stockée sous forme d’\textbf{énergie potentielle de pesanteur} :
+
+\[
+E_p = m g h
+\]
+
+où :
+\begin{itemize}
+\item $m$ est la masse du système (cycliste + vélo) en [Kg],
+\item $g$ l’accélération de la pesanteur en [m/s²],
+\item $h$ la hauteur gagnée en [m].
+\end{itemize}
+
+Plus la colline est haute ou plus la masse est grande, plus l’énergie stockée est grande.  
+C’est exactement ce que ressent le cycliste : \textbf{monter coûte de l’énergie}.
+
+\vspace{0.3cm}
+
+Arrivé en haut, le cycliste s’arrête un instant.  
+Le vélo ne bouge pas, mais l’énergie est toujours là.
+
+\vspace{0.2cm}
+
+\textbf{Descente}
+
+\vspace{0.2cm}
+
+Lorsque le cycliste se laisse redescendre sans pédaler, le vélo \textbf{accélère}.
+Il n’y a pourtant aucun moteur.
+
+L’énergie potentielle stockée se transforme alors en \textbf{énergie cinétique},
+c’est-à-dire en énergie de mouvement :
+
+\[
+E_c = \frac{1}{2} m v^2
+\]
+
+Plus la vitesse augmente, plus l’énergie cinétique est grande.
+
+\vspace{0.3cm}
+
+\textbf{Idée clé}
+
+\vspace{0.1cm}
+
+L’énergie ne disparaît pas :  
+elle \textbf{change de forme}.
+
+\[
+E_p \longrightarrow E_c
+\]
+
+Sans frottements, toute l’énergie potentielle gagnée à la montée
+serait retrouvée sous forme d’énergie cinétique à la descente.
+
+\vspace{0.3cm}
+
+\textbf{Unité}
+
+\vspace{0.1cm}
+
+Toutes ces formes d’énergie se mesurent en \textbf{joules} :
+
+\[
+[J] = kg \cdot m^2 \cdot s^{-2}
+\]
+
+C’est la même unité pour l’effort du cycliste, monter la colline
+et prendre de la vitesse à la descente.
+
+}
+
+
+% -------------------------------------------------
+\theorybox{H - Définition de la puissance (intuition physique)}{
+
+La puissance mesure la \textbf{vitesse à laquelle l’énergie est transférée}.
+Ce n’est pas une quantité d’énergie, mais un \textbf{débit d’énergie}.
+
+\vspace{0.2cm}
+
+\[
+P = \frac{E}{t}
+\qquad\Longleftrightarrow\qquad
+1\,\si{W} = 1\,\si{J/s}
+\]
+
+\vspace{0.3cm}
+
+\textbf{Exemple : l’ascenseur}
+
+\vspace{0.2cm}
+
+Un ascenseur de masse $m$ doit monter à une hauteur $h$.
+
+Pour cela, il faut lui fournir une énergie de pesanteur :
+
+\[
+E = m g h
+\]
+
+Cette énergie est \textbf{imposée par la physique} :  
+elle ne dépend ni du moteur, ni du temps de montée.
+
+\vspace{0.3cm}
+
+\textbf{Deux moteurs, même ascenseur}
+
+\vspace{0.2cm}
+
+\begin{itemize}
+\item Un moteur peu puissant met beaucoup de temps à monter.
+\item Un moteur très puissant monte rapidement.
+\end{itemize}
+
+Dans les deux cas, l’énergie totale fournie est la même.  
+Ce qui change, c’est \textbf{la durée du transfert}.
+
+\vspace{0.3cm}
+
+\textbf{Puissance comme débit}
+
+\vspace{0.2cm}
+
+La puissance indique \textbf{combien de joules sont fournis chaque seconde}.
+
+\begin{itemize}
+\item $500\,\si{W}$ signifie $500\,\si{J}$ par seconde.
+\item $2000\,\si{W}$ signifie $2000\,\si{J}$ par seconde.
+\end{itemize}
+
+Un moteur plus puissant fournit la même énergie,
+mais avec un \textbf{débit plus élevé}.
+
+\vspace{0.3cm}
+
+\textbf{Conséquence directe}
+
+\vspace{0.1cm}
+
+Si la puissance est multipliée par 4,  
+le temps de montée est divisé par 4 :
+
+\[
+t = \frac{E}{P}
+\]
+
+\vspace{0.3cm}
+
+\textbf{Lecture en unités SI}
+
+\vspace{0.1cm}
+
+L’unité de la puissance est le watt :
+
+\[
+[W] = \frac{J}{s}
+\]
+
+Or, l’unité du joule est :
+
+\[
+[J] = kg \cdot m^2 \cdot s^{-2}
+\]
+
+Donc :
+
+\[
+[W] = kg \cdot m^2 \cdot s^{-3}
+\]
+
+\vspace{0.2cm}
+
+On reconnaît immédiatement la signature du joule,
+avec \textbf{un facteur $s^{-1}$ en plus}.
+Cela confirme que la puissance est bien un \textbf{débit d’énergie} :
+des joules par seconde.
+
+\vspace{0.3cm}
+
+\textbf{Lien avec les autres expressions de la puissance}
+
+\vspace{0.1cm}
+
+\[
+P = F v
+\qquad\text{et}\qquad
+P = U I
+\]
+
+Ces expressions donnent la puissance sous d’autres formes,
+mais l’unité finale reste toujours le watt.
+
+\vspace{0.3cm}
+
+\textbf{Idée clé}
+
+\vspace{0.1cm}
+
+L’énergie est une \textbf{quantité}.  
+La puissance est un \textbf{débit}.
+
+Même énergie, puissance différente $\Rightarrow$ durée différente.
+
+}
+
+
+
+% -------------------------------------------------
+\theorybox{I - Analyse dimensionnelle (signature des unités)}{
+Chaque unité possède une \textbf{signature unique}, comme une factorisation en nombres premiers.
+
+\[
+J = kg \cdot m^2 \cdot s^{-2}
+\]
+
+Si les unités ne correspondent pas, le résultat \textbf{n’est pas une énergie}.  
+
+Exemple :
+\[
+E = m[kg]\cdot g[ms^{-2}]\cdot h[m]
+\Rightarrow
+kg \times \frac{m}{s^2} \times m = kg \cdot m^2 \cdot s^{-2}
+\]
+
+L’analyse dimensionnelle est un \textbf{outil de détection d’erreur}.
+}
+% -------------------------------------------------
+\theorybox{J - Formules courantes d'énergie et de puissance}{
+\vspace{0.2cm}
+
+\textbf{Énergies courantes}
+
+\begin{center}
+\begin{tabular}{|>{\small}l|>{\small}l|>{\small}l|>{\small}l|}
+\hline
+\textbf{Nom} & \textbf{Formule} & \textbf{Paramètres} & \textbf{Signature SI} \\
+\hline
+Potentielle (gravité) & $E_p = m g h$ & $m$ masse [kg], $g$ gravité [m/s²], $h$ hauteur [m] & $kg \cdot m^2 \cdot s^{-2}$ \\
+\hline
+Cinétique & $E_c = \frac{1}{2} m v^2$ & $m$ masse [kg], $v$ vitesse [m/s] & $kg \cdot m^2 \cdot s^{-2}$ \\
+\hline
+Thermique & $E_{th} = m c \Delta T$ & $m$ masse [kg], $c$ chaleur spé... [J/kg·K], $\Delta T$ [K] & $kg \cdot m^2 \cdot s^{-2}$ \\
+\hline
+Travail d'une force & $W = F d$ & $F$ force [N], $d$ distance [m] & $kg \cdot m^2 \cdot s^{-2}$ \\
+\hline
+Électrique & $E = U I t$ & $U$ tension [V], $I$ courant [A], $t$ durée [s] & $kg \cdot m^2 \cdot s^{-2}$ \\
+\hline
+Changement d'état & $E_\text{ch} = m L$ & $m$ masse [kg], $L$ chaleur latente [J/kg] & $kg \cdot m^2 \cdot s^{-2}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{0.3cm}
+
+\textbf{Puissances courantes}
+
+\begin{center}
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{Nom} & \textbf{Formule} & \textbf{Paramètres} & \textbf{Signature SI} \\
+\hline
+Générale & $P = \frac{E}{t}$ & $E$ énergie [J], $t$ temps [s] & $kg \cdot m^2 \cdot s^{-3}$ \\
+\hline
+Mécanique (force) & $P = F v$ & $F$ force [N], $v$ vitesse [m/s] & $kg \cdot m^2 \cdot s^{-3}$ \\
+\hline
+Électrique & $P = U I$ & $U$ tension [V], $I$ courant [A] & $kg \cdot m^2 \cdot s^{-3}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{0.3cm}
+
+\textbf{Note :}  
+La signature SI de toutes les énergies est toujours $kg \cdot m^2 \cdot s^{-2}$,  
+et celle de toutes les puissances est $kg \cdot m^2 \cdot s^{-3}$,  
+ce qui correspond à des joules par seconde.
+}
+
+
+% =================================================
+% PARTIE II : EXERCICES
+% =================================================
+
+\newpage
+\section*{II - Exercices}
+
+% -------------------------------------------------
+\subsection*{Exercice 1 - Train et énergie potentielle}
+
+Un train de masse $400\,\si{t}$ monte une colline de $80\,\si{m}$.
+
+\begin{itemize}
+\item Faire un dessin de la situation avec les données connues.
+\item Convertir toutes les données en unités SI.
+\item Calculer l’énergie potentielle gagnée.
+\end{itemize}
+
+\fullgrid
+
+% -------------------------------------------------
+\newpage
+\subsection*{Exercice 2 - Énergie cinétique d’une voiture}
+
+Une voiture de $1200\,\si{kg}$ roule à $120\,\si{km/h}$.
+
+\begin{itemize}
+\item Faire un dessin de la situation avec les données connues.
+\item Convertir la vitesse en m/s.
+\item Calculer l’énergie cinétique.
+\end{itemize}
+
+\fullgrid
+
+% -------------------------------------------------
+\newpage
+\subsection*{Exercice 3 - Vélo en descente}
+
+Un vélo de 100 kg descend une colline de $25\,\si{m}$ de hauteur. Calculer la vitesse au bas de la colline en km/h. On négligera les frottements.
+
+\begin{itemize}
+\item Faire un dessin de la situation avec les données connues.
+\item Calculer l'énergie.
+\item Calculer la vitesse au bas de la colline.
+\item Convertir la vitesse dans l'unité demandée.
+\end{itemize}
+
+\fullgrid
+
+% -------------------------------------------------
+\newpage
+\subsection*{Exercice 4 - Vélo en monté}
+
+Un vélo arrive au pied d'une colline avec une vitesse de 120 km/h. Quelle est la hauteur de la colline sachant qu'il est ralentie en montant et il s'arrête tout juste au sommet. 
+
+\begin{itemize}
+\item Faire un dessin de la situation avec les données connues.
+\item Convertir la vitesse en m/s.
+\item Calculer l'énergie.
+\item Calculer la hauteur.
+\end{itemize}
+
+\fullgrid
+
+% -------------------------------------------------
+\newpage
+\subsection*{Exercice 5 - Ascenseur}
+
+Un ascenseur de masse totale $900\,\si{kg}$ est tiré par un moteur de $1000\,\si{W}$ et doit monter une tour de $120\,\si{m}.
+
+\begin{itemize}
+\item Faire un dessin de la situation avec les données connues.
+\item Calculer l’énergie total.
+\item Calculer le temps de montée avec la puissance.
+\end{itemize}
+
+\fullgrid
+
+% -------------------------------------------------
+\newpage
+\subsection*{Exercice 6 - Barrage hydraulique}
+
+Un barrage laisse passer $2000\,\si{kg/s}$ d’eau depuis $600\,\si{m}$. Le lac mesure $2\,\si{km} \times 5\,\si{km}$ et $50\,\si{m}$ de profondeur. On néglige la profondeur du lac pour le calcul. N'utilise que la hauteur de la conduite forcée de $600\,\si{m}$ Calculer la puissance maximale que le barrage peut fournir en Kilo Watt ainsi que l'énergie totale stockée dans le lac en Kilo Watt heure.
+
+\begin{itemize}
+\item Faire un dessin de la situation avec les données connues.
+\item Convertir en unité SI.
+\item Calculer la puissance.
+\item Calculer l’énergie stockée dans le lac
+\end{itemize}
+
+\fullgrid
+
+% -------------------------------------------------
+\newpage
+\subsection*{Exercice 7 - Batterie}
+
+Une batterie fournit $24\,\si{V}$ et $15\,\si{A}$ pendant $3\,\si{h}$. Calculer la puissance puis calculer l'énergie total en Joule ainsi qu'en Watt Heure.
+
+\begin{itemize}
+\item Faire un dessin de la situation avec les données connues.
+\item Convertir en unité SI.
+\item Calculer la puissance.
+\item Calculer l’énergie en joules
+\item Convertir en Wh.
+\end{itemize}
+
+\fullgrid
+
+% -------------------------------------------------
+\newpage
+\subsection*{Exercice 8 - Chauffage}
+
+Un radiateur de $2000\,\si{W}$ fonctionne pendant $45\,\si{min}$.
+
+\begin{itemize}
+\item Faire un dessin de la situation avec les données connues.
+\item Convertir en unité SI.
+\item Calculer l’énergie consommée.
+\end{itemize}
+
+\fullgrid
+
+% -------------------------------------------------
+\newpage
+\subsection*{Exercice 9 - Saut vertical}
+
+Une personne de $70\,\si{kg}$ saute verticalement de $40\,\si{cm}$. Quelle est sa vitesse en retombant juste avant de toucher le sol ?
+
+\begin{itemize}
+\item Faire un dessin de la situation avec les données connues.
+\item Convertir en unité SI.
+\item Calculer l’énergie potentielle.
+\item En déduire la vitesse.
+\end{itemize}
+
+\fullgrid
+
+% -------------------------------------------------
+\newpage
+\subsection*{Exercice 10 - Turbine}
+
+Une turbine reçoit $30'000\,\si{litres/s}$ d’eau depuis $25\,\si{m}$. Quelle est la puissance théorique disponible sur l'arbre de la turbine ?
+
+\begin{itemize}
+\item Faire un dessin de la situation avec les données connues.
+\item Convertir en unité SI.
+\item Calculer la puissance.
+\end{itemize}
+
+\fullgrid
+
+% -------------------------------------------------
+
+\newpage
+\subsection*{Exercice 12 - Panneau solaire}
+
+Des panneaux solaires de surface $12\,\si{m^2}$ sont exposés à un soleil intense
+(par beau temps, soleil haut dans le ciel).
+
+L’irradiance solaire au sol est $ I = 1000\,\si{W/m^2} $
+
+Le panneau a une efficacité de $25\%$.
+Calcul la puissance électrique disponible à la sortie du panneau en [W] ainsi que la quantité d'énergie électrique total produite entre 11h et 13h en [kWh].
+Rappel : Une efficacité de $25\%$ signifie que \textbf{seulement un quart} de l’énergie lumineuse est transformée en électricité. Le reste est principalement perdu sous forme de chaleur.
+
+\begin{itemize}
+\item Faire un schéma simple du panneau et du rayonnement solaire.
+\item Identifier les données connues et leurs unités.
+\item Calculer la puissance solaire reçue par le panneau.
+\item Calculer la puissance électrique disponible en tenant compte de l’efficacité.
+\item Calculer l’énergie produite.
+\end{itemize}
+
+
+\threequartergrid
+
+% -------------------------------------------------
+\newpage
+\subsection*{Exercice 13 - Bouilloires et puissance}
+
+Deux bouilloires électriques sont utilisées pour chauffer de l’eau :
+
+\begin{itemize}
+\item Bouilloire A : $100\,\si{ml}$ d’eau à $50\,\si{°C}$ avec une puissance de $100\,\si{W}$.
+\item Bouilloire B : $1.5\,\si{L}$ d’eau à $20\,\si{°C}$ avec une puissance de $2000\,\si{W}$.
+\end{itemize}
+la chaleur spécifique de l'eau est $c = 4180\,\si{J/(kg \cdot K)}$.
+
+\textbf{Question :} Laquelle des deux bouilloires portera son eau à $100\,\si{°C}$ en premier et combien de temps faudra-t-il pour chacune ?
+
+\begin{itemize}
+\item Faire un dessin de la situation avec les données connues.
+\item Convertir toutes les données en unités SI :
+\item Calculer l’énergie nécessaire pour chaque cas.
+\item Calculer le temps à partir de la puissance
+\end{itemize}
+
+\threequartergrid
+
+\end{document}

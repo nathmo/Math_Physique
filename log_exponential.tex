@@ -1,0 +1,639 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{tcolorbox}
+\usepackage{geometry}
+\usepackage{pgfplots}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\geometry{margin=2cm}
+\pagestyle{fancy}
+
+\fancyhf{}
+\lhead{\textbf{Exponentielle et Logarithme — Partie 1}}
+\rhead{\thepage}
+\tcbset{colback=white,colframe=black!70!black,sharp corners,boxrule=0.8pt}
+
+\newcommand{\rulebox}[3]{
+\begin{tcolorbox}[colback=#1!10!white,colframe=#1!60!black,title=\textbf{#2}]
+#3
+\end{tcolorbox}
+}
+
+\newcommand{\gridspace}{
+\vspace{0.5cm}
+\begin{tikzpicture}[scale=0.5]
+\draw[step=0.5cm,gray!30,very thin] (0,0) grid (27,6);
+\end{tikzpicture}
+}
+
+\begin{document}
+
+\begin{center}
+{\LARGE \textbf{Fonctions Exponentielles et Logarithmes — Partie 1}}\\[0.5cm]
+{\large Bases, définitions, propriétés, démonstrations et exemples détaillés}
+\end{center}
+
+\rulebox{orange}{1. Rappel sur la puissance}{
+Pour tout nombre réel $a>0$ et tout entier $n$, on définit :
+\[
+a^n = \underbrace{a\times a\times \cdots \times a}_{n\text{ fois}}
+\]
+et $a^0=1$ par convention.
+
+Pour les puissances négatives :
+\[
+a^{-n} = \frac{1}{a^n}
+\]
+
+Pour les puissances fractionnaires :
+\[
+a^{1/n} = \sqrt[n]{a}, \quad a^{p/q} = \sqrt[q]{a^p}
+\]
+}
+
+\rulebox{orange}{2. Généralisation aux puissances réelles}{
+On cherche à définir $a^x$ pour tout réel $x$.  
+Pour cela, on introduit la fonction exponentielle, fondée sur la base spéciale $e$ :
+\[
+a^x = e^{x\ln(a)}
+\]
+et par une règles qui viens ensuite, on peux définir toute les base possibles et pas seulement e.
+\[
+10^x, 2^x, \pi^x, ...
+\]
+e c'est comme pi, une valeurs irrationel (donc pas sous forme de fraction. c'est juste un nombre a virgule) qui a des propriété intéressantes.
+\[
+e = 2,71828...
+\]
+
+}
+
+\rulebox{gray}{3. Valeurs particulières}{
+\[
+a^0 = 1, \quad a^1 = a, \quad a^{-1} = \frac{1}{a}
+\]
+\[
+e^{\ln(a)} = a, \quad \ln(e^x) = x
+\]
+}
+
+\rulebox{red}{4. Cas particuliers et interdits}{
+\begin{itemize}
+\item $a=0$ : $0^x$ n’est défini que pour $x>0$.
+\item $a<0$ : $a^x$ n’est défini que si $x$ est rationnel à dénominateur impair.
+\item $a=1$ : $1^x=1$ pour tout $x$.
+\end{itemize}
+}
+
+\rulebox{purple}{5. Fonctions exponentielles et logarithmes selon la base}{
+\begin{itemize}
+\item \textbf{Exponentielle de base $e$} : $f(x)=e^x$, dite « exponentielle naturelle ».  
+    Sa fonction réciproque est le \textbf{logarithme népérien} $\ln(x)$, défini pour $x>0$, avec la propriété fondamentale :
+    \[
+    \ln(e^x)=x, \quad e^{\ln(x)}=x
+    \]
+
+\item \textbf{Exponentielle de base 10} : $f(x)=10^x$, très utilisée pour les puissances de 10.  
+    Sa fonction réciproque est le \textbf{logarithme décimal} $\log(x)$ (ou parfois $\log_{10}(x)$) :
+    \[
+    \log(10^x)=x, \quad 10^{\log(x)}=x
+    \]
+
+\item \textbf{Exponentielle de base $a>0$, $a\neq 1$} : $f(x)=a^x$.  
+    Sa réciproque est le logarithme de base $a$, noté $\log_a(x)$ :
+    \[
+    \log_a(a^x)=x, \quad a^{\log_a(x)}=x
+    \]
+
+\end{itemize}
+
+\textbf{Relations entre bases :}
+\[
+a^x = (e^{\ln(a)})^x = e^{x\ln(a)}, \quad e^x = a^{x \log_a(e)}, \quad 10^x = e^{x\ln(10)}
+\]
+
+\textbf{Domaines et images :}
+\[
+D(a^x) = \mathbb{R}, \quad \text{Image}(a^x) = \mathbb{R}^+_*
+\]
+
+\textbf{Résumé sur les logarithmes :}
+\begin{itemize}
+\item $\ln(x)$ : logarithme népérien, base $e$.
+\item $\log(x)$ : logarithme décimal, base 10.
+\item $\log_a(x)$ : logarithme en base $a$ quelconque.
+\end{itemize}
+}
+
+
+
+
+\rulebox{blue}{6. Propriétés générales des exponentielles}{
+Pour tout $a>0, b>0, x,y\in\mathbb{R}$ :
+\[
+\begin{aligned}
+a^{x+y} &= a^x \cdot a^y \\
+a^{x-y} &= \frac{a^x}{a^y} \\
+(a^x)^y &= a^{xy} \\
+(ab)^x &= a^x b^x \\
+\frac{a^x}{b^x} &= \left(\frac{a}{b}\right)^x
+\end{aligned}
+\]
+}
+
+
+
+\rulebox{purple}{7. Définition du logarithme de base $a$}{
+La fonction logarithme de base $a>0, a\neq1$ est la réciproque de $a^x$ :
+\[
+y=\log_a(x) \Longleftrightarrow a^y = x
+\]
+\textbf{Domaines :}
+\[
+D(\log_a)=(0,+\infty), \quad \text{Image}(\log_a)=\mathbb{R}
+\]
+
+}
+
+\rulebox{blue}{8. Propriétés du logarithme (toutes bases)}{
+\[
+\begin{aligned}
+\log_a(1) &= 0 \\
+\log_a(a) &= 1 \\
+\log_a(ab) &= \log_a(a) + \log_a(b) \\
+\log_a\!\left(\frac{a}{b}\right) &= \log_a(a) - \log_a(b) \\
+\log_a(a^r) &= r\log_a(a) \\
+\log_a\!\left(\frac{1}{b}\right) &= -\log_a(b)
+\end{aligned}
+\]
+
+\textbf{Remarques :}
+\[
+\log_a(0) \text{ n’existe pas car } a^x>0 \text{ toujours, et } \log_a(x)<0 \text{ quand } 0<x<1.
+\]
+}
+
+\rulebox{green}{9. Changement de base}{
+Toute base peut se ramener à une autre :
+\[
+\log_a(x) = \frac{\ln(x)}{\ln(a)} = \frac{\log_b(x)}{\log_b(a)}
+\]
+\[
+a^x = b^{x\log_b(a)}
+\]
+
+\textbf{Exemples :}
+\[
+\log_{10}(1000) = 3, \quad \log_2(8) = 3
+\]
+\[
+\log_2(10) = \frac{\ln(10)}{\ln(2)} \approx 3.3219
+\]
+}
+
+\rulebox{orange}{10. Combinaisons et inversions fréquentes}{
+\[
+\ln(e^x) = x, \quad e^{\ln(x)} = x, \quad \log_a(a^x)=x, \quad a^{\log_a(x)}=x
+\]
+\[
+e^{x+y} = e^x e^y, \quad \ln(ab)=\ln(a)+\ln(b)
+\]
+\[
+\ln\!\left(\frac{1}{a}\right) = -\ln(a), \quad \ln\!\left(\frac{a}{b}\right) = \ln(a)-\ln(b)
+\]
+\[
+\ln(a^r) = r\ln(a), \quad e^{-x}=\frac{1}{e^x}
+\]
+\[
+\log_a(b) = \frac{1}{\log_b(a)}
+\]
+}
+
+\rulebox{gray}{11. Exemples concrets}{
+\[
+\begin{aligned}
+\log_2(32) &= 5 \\
+\log_5(1/25) &= -2 \\
+\log_{10}(0.001) &= -3 \\
+e^{-\ln(2)} &= \frac{1}{2} \\
+\log_3(9) &= 2, \quad 3^{\log_3(9)}=9
+\end{aligned}
+\]
+
+Exemple de changement de base :
+\[
+\log_4(8) = \frac{\ln(8)}{\ln(4)} = \frac{3\ln(2)}{2\ln(2)} = \frac{3}{2}
+\]
+}
+
+\rulebox{teal}{12. Lien entre croissance et proportionnalité}{
+Les fonctions exponentielles modélisent la croissance ou la décroissance proportionnelle :
+\[
+N(t)=N_0 e^{kt}
+\]
+où $k>0$ signifie croissance et $k<0$ décroissance.
+
+La fonction logarithme, inverse, mesure le temps nécessaire pour atteindre un facteur donné :
+\[
+t = \frac{1}{k}\ln\!\left(\frac{N(t)}{N_0}\right)
+\]
+}
+
+\rulebox{purple}{Graphique de $e^x$ et $\ln(x)$}{
+On choisit quelques points caractéristiques pour construire le tableau de valeurs :
+
+\begin{tabular}{c|cccccc}
+$x$ & -2 & -1 & 0 & 1 & 2 & 3 \\
+\hline
+$e^x$ & 0.14 & 0.37 & 1 & 2.72 & 7.39 & 20.1 \\
+\end{tabular}
+
+Pour le logarithme (inverse) :
+
+\begin{tabular}{c|cccccc}
+$x$ & 0.1 & 0.5 & 1 & 2 & 5 & 10 \\
+\hline
+$\ln(x)$ & -2.30 & -0.69 & 0 & 0.69 & 1.61 & 2.30 \\
+\end{tabular}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+axis lines=middle,
+xlabel=$x$, ylabel=$y$,
+xmin=-3,xmax=3,
+ymin=-3,ymax=3,
+samples=100,
+domain=-3:3,
+grid=both,
+legend style={at={(1,1)},anchor=north east}]
+\addplot[blue, thick] {exp(x)};
+\addlegendentry{$y=e^x$}
+\addplot[red, thick, domain=0.05:3] {ln(x)};
+\addlegendentry{$y=\ln(x)$}
+\end{axis}
+\end{tikzpicture}
+\end{center}
+}
+
+\rulebox{gray}{Effet des transformations}{
+Multiplier $x$ par un scalaire $k$ :  
+\[
+f(x)=e^{kx} \Rightarrow \text{étire ou contracte horizontalement.}
+\]
+
+\[
+f(x)=k\cdot e^{x} \Rightarrow \text{étire ou contracte verticalement.}
+\]
+
+Ajouter une constante :  
+\[
+f(x)+a \Rightarrow \text{translation verticale,} \quad
+f(x+a) \Rightarrow \text{translation horizontale.}
+\]
+
+Même logique pour $\ln(x)$ :  
+\[
+\ln(kx) = \ln(x) + \ln(k)
+\]
+}
+
+\rulebox{cyan}{Ensembles de définition des fonctions exponentielles et logarithmes}{
+\textbf{Définition :} L'ensemble de définition (ou domaine) d'une fonction est l'ensemble des valeurs de $x$ pour lesquelles la fonction est \textit{définie} et renvoie un résultat réel.  
+
+\begin{itemize}
+\item Pour $y = e^x$ : la fonction exponentielle est définie pour tout réel $x \in \mathbb{R}$.
+\[
+D(e^x) = \mathbb{R}, \quad \text{et} \quad y \in \mathbb{R}^+_*
+\]
+\item Pour $y = \ln(x)$ : le logarithme naturel n'est défini que pour $x>0$.
+\[
+D(\ln(x)) = \, ]0,+\infty[ , \quad y \in \mathbb{R}
+\]
+\item Effet des transformations horizontales et verticales :
+\begin{itemize}
+\item $y = e^{x+a}$ : translation horizontale vers la gauche si $a>0$, droite si $a<0$.  
+\[
+D(e^{x+a}) = \mathbb{R}, \quad y \in \mathbb{R}^+_*
+\]
+\item $y = e^{kx}$ : étirement ou compression horizontale selon $k$.  
+\[
+D(e^{kx}) = \mathbb{R}, \quad y \in \mathbb{R}^+_*
+\]
+\item $y = \ln(x+a)$ : translation horizontale, domaine modifié : $x+a>0 \Rightarrow x > -a$  
+\[
+D(\ln(x+a)) = \, ]-a,+\infty[
+\]
+\item $y = k\cdot \ln(x)$ ou $y = \ln(x)^2$ : transformation verticale n’affecte pas le domaine, seulement l’image.  
+\end{itemize}
+\item Notation standard pour les intervalles :
+\[
+[-\infty;0[ = \{ x \in \mathbb{R} \mid x<0\}, \quad ]0;+\infty[ = \{ x>0\}
+\]
+\end{itemize}
+
+\textbf{Exemples illustratifs :}  
+\[
+\begin{aligned}
+f(x) &= e^x \Rightarrow x \in \mathbb{R}, y \in \mathbb{R}^+_* \\
+g(x) &= \ln(x-2) \Rightarrow x>2, y \in \mathbb{R} \\
+h(x) &= e^{-x}+3 \Rightarrow x \in \mathbb{R}, y \in ]3,+\infty[
+\end{aligned}
+\]
+}
+
+
+\newpage
+
+\begin{center}
+{\LARGE \textbf{Exercices : Logarithmes et exponentielles (bases variées)}}
+\end{center}
+
+\begin{enumerate}
+\item Simplifier au maximum $\log_2(8)$ \\[0.2cm]
+\gridspace
+
+\item Simplifier au maximum $\log_3(3^5)$ \\[0.2cm]
+\gridspace
+
+\item Simplifier au maximum $\log_5(25) + \log_5(4)$ \\[0.2cm]
+\gridspace
+
+\item Simplifier au maximum $\log_{10}(1000) - \log_{10}(10)$ \\[0.2cm]
+\gridspace
+
+\item Simplifier au maximum $\log_2(4 \times 8)$ \\[0.2cm]
+\gridspace
+\newpage
+
+\item Simplifier au maximum $\log_5\left(\frac{125}{5}\right)$ \\[0.2cm]
+\gridspace
+
+\item Simplifier au maximum $\log_3(9^2)$ \\[0.2cm]
+\gridspace
+
+\item Simplifier au maximum $2\log_2(5)$ \\[0.2cm]
+\gridspace
+
+\item Simplifier au maximum $\dfrac{\log_5(100)}{\log_5(10)}$ \\[0.2cm]
+\gridspace
+
+\item Simplifier au maximum $\log_2(32) - \log_2(4)$ \\[0.2cm]
+\gridspace
+\newpage
+
+\item Simplifier au maximum $\log_2(2^x)$ \\[0.2cm]
+\gridspace
+
+\item Simplifier au maximum $2^{\log_2(7)}$ \\[0.2cm]
+\gridspace
+
+\item Simplifier au maximum $10^{\log_{10}(3)}$ \\[0.2cm]
+\gridspace
+
+\item Simplifier au maximum $e^{\ln(5)}$ \\[0.2cm]
+\gridspace
+
+\item Simplifier au maximum $\ln(e^4)$ \\[0.2cm]
+\gridspace
+\newpage
+
+\item Simplifier au maximum $\log_2(16) + \log_2(1/2)$ \\[0.2cm]
+\gridspace
+
+\item Simplifier au maximum $\log_4(64)$ \\[0.2cm]
+\gridspace
+
+\item Simplifier au maximum $\log_9(3)$ \\[0.2cm]
+\gridspace
+
+\item Simplifier au maximum $\dfrac{\log_2(9)}{\log_2(3)}$ \\[0.2cm]
+\gridspace
+
+\item Simplifier au maximum $\log_5(125x) - \log_5(5x)$ \\[0.2cm]
+\gridspace
+\newpage
+
+\item Simplifier au maximum $\ln(a^3 b^2)$ \\[0.2cm]
+\gridspace
+
+\item Simplifier au maximum $\ln\!\left(\frac{e^5}{e^2}\right)$ \\[0.2cm]
+\gridspace
+
+\item Simplifier au maximum $\ln(e^{x+1})$ \\[0.2cm]
+\gridspace
+
+\item Simplifier au maximum$\ln(ab) - \ln(a) - \ln(b)$ \\[0.2cm]
+\gridspace
+
+\item Simplifier au maximum $\ln(1) + \ln(e^{-3})$ \\[0.2cm]
+\gridspace
+\newpage
+
+\item Simplifier au maximum $\log_2(10)$ en utilisant le changement de base $\dfrac{\log_{10}(10)}{\log_{10}(2)}$ \\[0.2cm]
+\gridspace
+
+\item Simplifier au maximum $\log_3(81)$ \\[0.2cm]
+\gridspace
+
+\item Simplifier au maximum $\log_{1/2}(8)$ \\[0.2cm]
+\gridspace
+
+\item Simplifier au maximum $3^{\log_3(2)} \times 3^{\log_3(4)}$ \\[0.2cm]
+\gridspace
+
+\item Simplifier au maximum $\log_2(2^3 \times 8)$ \\[0.2cm]
+\gridspace
+\newpage
+
+\item Simplifier au maximum $\log_2\!\left(\sqrt{8}\right)$ \\[0.2cm]
+\gridspace
+
+\item Simplifier au maximum $\log_3\!\left(\dfrac{9}{\sqrt{3}}\right)$ \\[0.2cm]
+\gridspace
+
+\item Simplifier au maximum $\log_5\!\left(\dfrac{1}{25}\right)$ \\[0.2cm]
+\gridspace
+
+\item Simplifier au maximum$\log_{10}\!\left(\sqrt[3]{1000}\right)$ \\[0.2cm]
+\gridspace
+
+\item Simplifier au maximum $\ln\!\left(\sqrt{e^6}\right)$ \\[0.2cm]
+\gridspace
+\newpage
+
+\item Simplifier au maximum $\log_2\!\left(\dfrac{16 \times \sqrt{2}}{8}\right)$ \\[0.2cm]
+\gridspace
+
+\item Simplifier au maximum $\log_4\!\left(\dfrac{64}{\sqrt{4}}\right)$ \\[0.2cm]
+\gridspace
+
+\item Simplifier au maximum $\log_3\!\left(9^{1/2} \times 27^{1/3}\right)$ \\[0.2cm]
+\gridspace
+
+\item Simplifier au maximum $\log_5\!\left(\dfrac{5^4}{\sqrt{5^2}}\right)$ \\[0.2cm]
+\gridspace
+
+\item Simplifier au maximum $\log_2\!\left(\sqrt[4]{32^3}\right)$ \\[0.2cm]
+\gridspace
+\newpage
+
+\item Simplifier au maximum $\ln\!\left(\dfrac{e^{2x}\sqrt{e^3}}{e}\right)$ \\[0.2cm]
+\gridspace
+
+\item Simplifier au maximum $\ln\!\left(\sqrt{\dfrac{a^3 b^4}{c^2}}\right)$ \\[0.2cm]
+\gridspace
+
+\item Simplifier au maximum $\ln\!\left(\dfrac{\sqrt{e^6}}{e^{-2}}\right)$ \\[0.2cm]
+\gridspace
+
+\item Simplifier au maximum $\ln\!\left(\dfrac{(x^2 y^3)^{1/2}}{z^4}\right)$ \\[0.2cm]
+\gridspace
+
+\item Simplifier au maximum $\ln\!\left(\dfrac{(e^a e^b)^2}{e^{3a-b}}\right)$ \\[0.2cm]
+\gridspace
+\newpage
+
+\item Simplifier au maximum $2^{\log_2(3) + \log_2(4)}$ \\[0.2cm]
+\gridspace
+
+\item Simplifier au maximum $3^{\log_3(9) - \log_3(3)}$ \\[0.2cm]
+\gridspace
+
+\item Simplifier au maximum $10^{2\log_{10}(5) - \log_{10}(2)}$ \\[0.2cm]
+\gridspace
+
+\item Simplifier au maximum$e^{\ln(4) + \frac{1}{2}\ln(9)}$ \\[0.2cm]
+\gridspace
+
+\item Simplifier au maximum $e^{\ln(a^2) - \ln(\sqrt{a})}$ \\[0.2cm]
+\gridspace
+\newpage
+
+\item Simplifier au maximum en fonction de a$\log_3\!\left(\dfrac{27^{1/3}}{9^{1/2}}\right)$ \\[0.2cm]
+\gridspace
+
+\item Simplifier au maximum $\log_2\!\left(\sqrt[3]{\dfrac{32 \times 8}{4}}\right)$ \\[0.2cm]
+\gridspace
+
+\item Simplifier au maximum $\log_5\!\left(\sqrt[4]{\dfrac{125^3}{25}}\right)$ \\[0.2cm]
+\gridspace
+
+\item Simplifier au maximum $\ln\!\left(\dfrac{\sqrt[3]{e^9}}{\sqrt{e}}\right)$ \\[0.2cm]
+\gridspace
+
+\item Simplifier au maximum en fonction de x $\ln\!\left(\dfrac{(e^{2x})^{3/2}}{(e^x)^2}\right)$ \\[0.2cm]
+\gridspace
+\newpage
+
+\item Simplifier au maximum en fonction de x et y $\log_2\!\left(\dfrac{\sqrt{a^4 b^2}}{(a b^3)^{1/2}}\right)$ \\[0.2cm]
+\gridspace
+
+\item Simplifier au maximum en fonction de x et y $\log_3\!\left(\dfrac{(x^2 y)^{1/3}}{\sqrt{y}}\right)$ \\[0.2cm]
+\gridspace
+
+\item Simplifier au maximum en fonction de a et b $\ln\!\left(\sqrt{\dfrac{e^{4a} e^{-b}}{e^{2a-b}}}\right)$ \\[0.2cm]
+\gridspace
+
+\item Simplifier au maximum en fonction de x et y $\ln\!\left(\dfrac{(e^{3x}\sqrt{e^y})^2}{e^{x+y}}\right)$ \\[0.2cm]
+\gridspace
+
+\item $\log_2\!\left(\sqrt[3]{(2^3 \times 4^2)}\right)$ \\[0.2cm]
+\gridspace
+\newpage
+\end{enumerate}
+
+\newpage
+\begin{center} {\LARGE \textbf{Exercices : Applications exponentielles}} \end{center}
+\begin{enumerate}
+
+\item Une population de bactéries double toutes les 3 heures.  
+Au départ, il y a 500 bactéries. Combien y en aura-t-il après 12 heures ? \\[0.2cm]
+\gridspace
+
+\item Une substance radioactive se désintègre selon la loi $N(t) = N_0 e^{-0.03t}$ où $t$ est en heures.  
+Si la quantité initiale est de 100 g, quelle quantité reste après 50 heures ? \\[0.2cm]
+\gridspace
+
+
+\item La population de lapins d’une île suit le modèle $P(t) = 50 \cdot 1.05^t$, $t$ en mois.  
+Combien de lapins après 2 ans ? \\[0.2cm]
+\gridspace
+
+\item Une ville a une croissance démographique de 2\% par an.  
+Si la population actuelle est de 80’000 habitants, quelle sera la population dans 10 ans ? \\[0.2cm]
+\gridspace
+
+
+\item Une bactérie se reproduit selon $N(t) = 200 e^{0.4t}$ avec $t$ en heures.  
+Combien de temps faut-il pour que la population atteigne 1600 bactéries ? \\[0.2cm]
+\gridspace
+
+\newpage
+\item Un isotope a une demi-vie de 5 heures. La quantité initiale est de 50 g.  
+Combien restera-t-il après 15 heures ? \\[0.2cm]
+\gridspace
+
+
+\item Un capital de 1000 CHF est placé à intérêt composé continu de 3\% par an.  
+Quelle sera la valeur après 8 ans ? \\[0.2cm]
+\gridspace
+
+\item Une population de cellules suit la loi $N(t) = 1000 \cdot 2^{-t/6}$, $t$ en heures.  
+Combien reste-t-il après 18 heures ? \\[0.2cm]
+\gridspace
+
+
+\item Une colonie de champignons croît selon $M(t)=50 e^{0.25t}$, $t$ en jours.  
+Après combien de jours la masse atteindra 400 ? \\[0.2cm]
+\gridspace
+
+\item Une substance radioactive a une demi-vie de 10 jours.  
+Si la masse initiale est de 80 g, combien reste-t-il après 30 jours ? \\[0.2cm]
+\gridspace
+\newpage
+\end{enumerate}
+
+\newpage
+\begin{center} {\LARGE \textbf{Exercices : Équations exponentielles complexes}} \end{center}
+\begin{enumerate}
+\item Résoudre $(x+3)(x-2)e^x = 3x^2 + x$. \\[0.2cm]
+\gridspace
+
+\item Résoudre $e^{2x} - 5 e^x + 6 = 0$. \\[0.2cm]
+\gridspace
+
+\item Résoudre $(x^2-1)e^{x} = x+1$. \\[0.2cm]
+\gridspace
+
+\item Résoudre $e^{x} + e^{-x} = 3$. \\[0.2cm]
+\gridspace
+
+\item Résoudre $(2x-1)e^{x} = x^2$. \\[0.2cm]
+\gridspace
+\newpage
+
+\item Résoudre $(x+2)(x-3)e^{2x} = x^2 + x - 6$. \\[0.2cm]
+\gridspace
+
+\item Résoudre $e^{3x} - 4 e^{x} + 3 = 0$. \\[0.2cm]
+\gridspace
+
+\item Résoudre $(x-1)^2 e^x = x+2$. \\[0.2cm]
+\gridspace
+
+\item Résoudre $e^{x} + 2 e^{-x} = 5$. \\[0.2cm]
+\gridspace
+
+\item Résoudre $(x^2+1)e^x = 2x^2 + 3$. \\[0.2cm]
+\gridspace
+\newpage
+\end{enumerate}
+
+
+
+\end{document}

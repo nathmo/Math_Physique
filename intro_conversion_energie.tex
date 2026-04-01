@@ -1,0 +1,182 @@
+\documentclass[a4paper,10pt,landscape]{article}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage[margin=0.7cm]{geometry}
+\usepackage{graphicx}
+\setlength{\columnsep}{1cm}
+\setlength{\parindent}{0pt}
+
+% ----- Couleurs -----
+\definecolor{mechblue}{RGB}{0,90,180}
+\definecolor{elecred}{RGB}{200,40,40}
+\definecolor{graybg}{RGB}{245,245,245}
+\definecolor{blockbg}{RGB}{255,255,255}
+
+% ----- Style de boîte -----
+\tcbset{
+  cheatbox/.style={
+    enhanced,
+    sharp corners,
+    colback=blockbg,
+    colframe=black!40,
+    boxrule=0.5pt,
+    left=4pt, right=4pt, top=2pt, bottom=2pt,
+    fonttitle=\bfseries,
+    coltitle=black,
+    before skip=6pt, after skip=6pt
+  }
+}
+
+\begin{document}
+
+\begin{center}
+{\LARGE \textbf{Fiche Synthèse -- Énergie potentielle et Puissance}}\\[4pt]
+\end{center}
+
+\begin{multicols}{2}
+
+% ----------------------------------------
+% COLONNE 1 : MÉCANIQUE
+% ----------------------------------------
+
+\begin{tcolorbox}[cheatbox,title={\color{mechblue}Énergie potentielle gravitationnelle}]
+\[
+E = m g h
+\]
+$m$ : masse (\si{kg}) \quad
+$g$ : gravité (\si{m/s^2}) \quad
+$h$ : hauteur (\si{m}) \quad
+$E$ : énergie (\si{J})
+
+\textbf{Interprétation :}  
+Chaque kilogramme placé à une hauteur $h$ possède une énergie potentielle $E=mgh$ qui peut être libérée en descendant.
+
+\textbf{Exemple :}  
+$1\,\si{m^3}$ d’eau ($1000\,\si{kg}$) à $100\,\si{m}$ :  
+\[
+E = 1000 \times 9.81 \times 100 = 981{,}000\,\si{J}
+\]
+→ environ 0.27 kWh stockés dans le lac.
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[cheatbox,title={\color{mechblue}Puissance hydraulique}]
+\[
+P = \rho g h Q = \frac{E}{t}
+\]
+$P$ : puissance (\si{W}) \quad
+$\rho$ : densité (\si{kg/m^3}) \quad
+$g$ : gravité (\si{m/s^2}) \quad
+$h$ : hauteur (\si{m}) \\
+$Q$ : débit volumique (\si{m^3/s}) \quad
+$t$ : temps (\si{s})
+
+\textbf{Exemple :}  
+Un barrage laisse passer $Q=1\,\si{m^3/s}$ d’eau depuis $100\,\si{m}$ :  
+\[
+P = 1000 \times 9.81 \times 100 \times 1 = 981{,}000\,\si{W} = 981\,\si{kW}
+\]
+→ la puissance mécanique transformée en électricité par la turbine.
+\end{tcolorbox}
+
+
+% ----------------------------------------
+% COLONNE 2 : ÉLECTRICITÉ
+% ----------------------------------------
+
+\begin{tcolorbox}[cheatbox,title={\color{elecred}Énergie potentielle électrique (batterie)}]
+\[
+E = U Q = U I t
+\]
+$E$ : énergie (\si{J}) \quad
+$U$ : tension (\si{V}) \quad
+$Q$ : charge (\si{C}) \quad
+$I$ : courant (\si{A}) \quad
+$t$ : temps (\si{s})
+
+\textbf{Interprétation :}  
+Chaque coulomb (paquet d’électrons) placé à une tension $U$ possède une énergie potentielle $UQ$.  
+Une batterie élève les charges “en hauteur électrique”, comme un barrage élève l’eau.
+
+\textbf{Exemple :}  
+Batterie $12\,\si{V}$, $10\,\si{Ah}$ :  
+\[
+10\,\si{Ah} = 10 \times 3600\,\si{C} = 36{,}000\,\si{C}
+\]
+\[
+E = 12 \times 36{,}000 = 432{,}000\,\si{J} = 120\,\si{Wh}
+\]
+→ équivalent à soulever $60\,\si{kg}$ à 730 m.
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[cheatbox,title={\color{elecred}Puissance électrique}]
+\[
+P = U I = \frac{E}{t}
+\]
+$P$ : puissance (\si{W}) \quad
+$U$ : tension (\si{V}) \quad
+$I$ : courant (\si{A}) \quad
+$t$ : temps (\si{s})
+
+\textbf{Exemple :}  
+Une batterie $12\,\si{V}$ fournissant $10\,\si{A}$ :  
+\[
+P = 12 \times 10 = 120\,\si{W}
+\]
+\end{tcolorbox}
+
+\end{multicols}
+
+
+% ----------------------------------------
+% ANALOGIE HYDRAULIQUE EN PLEINE LARGEUR
+% ----------------------------------------
+
+\begin{tcolorbox}[cheatbox, title={\color{elecred}Analogie mécanique – électrique}, width=0.97\textwidth]
+\begin{center}
+\begin{tabular}{lll}
+\textbf{Mécanique (gravité)} & \textbf{Électricité} & \textbf{Sens physique}\\
+\hline
+Hauteur ($h$) & Tension ($U$) & Différence de potentiel\\
+Masse ($m$) & Charge ($Q$) & Quantité stockée\\
+Densité $\rho g$ & Capacité $C$ & “Rigidité” du stockage\\
+Débit ($Q/t$) & Courant ($I$) & Flux de transfert\\
+Force ($F = m g$) & Champ électrique ($E$) & Force motrice unitaire\\
+\end{tabular}
+\end{center}
+
+\vspace{6pt}
+\[
+E = m g h \quad\Longleftrightarrow\quad E = U Q = U C V \\, 
+P = F v = \frac{E}{t} \quad\Longleftrightarrow\quad P = U I = U \frac{Q}{t}
+\]
+
+\textbf{Idée clé :}  
+Un barrage accumule de la mass à un potentiel gravitationnel de x mètres ;  
+une batterie accumule des charges à un potentiel électrique de x Volts.  
+Dans les deux cas, la puissance dépend du \textit{flux} (débit ou courant).
+\end{tcolorbox}
+
+
+% ----------------------------------------
+% SECTION : SYNTHÈSE VISUELLE
+% ----------------------------------------
+\begin{center}
+\begin{tcolorbox}[cheatbox, colback=graybg, width=0.97\textwidth]
+\centering
+\textbf{Cohérence dimensionnelle (analyse des unités du SI)}
+\[
+\underbrace{U I t}_{(\si{\volt\ampere\second})} =
+\underbrace{E}_{(\si{\joule})} =
+\underbrace{F d}_{(\si{\newton\metre})} =
+\underbrace{m g h}_{(\si{\kilo\gram\metre\squared\per\second\squared})}
+\]
+
+\end{tcolorbox}
+\end{center}
+
+\end{document}

@@ -1,0 +1,337 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{tcolorbox}
+\usepackage{geometry}
+\usepackage{pgfplots}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+
+\geometry{margin=2cm}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\textbf{Unité et système SI}}
+\rhead{\thepage}
+
+\tcbset{colback=white,colframe=black!70!black,sharp corners,boxrule=0.8pt}
+
+\newcommand{\rulebox}[3]{
+\begin{tcolorbox}[colback=#1!10!white,colframe=#1!60!black,title=\textbf{#2}]
+#3
+\end{tcolorbox}
+}
+
+\newcommand{\gridspace}{
+\vspace{0.5cm}
+\begin{tikzpicture}[scale=0.5]
+\draw[step=0.5cm,gray!30,very thin] (0,0) grid (27,8);
+\end{tikzpicture}
+\vspace{0.5cm}
+}
+
+\begin{document}
+
+\begin{center}
+{\LARGE \textbf{Feuille de Révision : Les unités et le système SI}}\\[0.5cm]
+{\large Définitions, conversions et simplifications}
+\end{center}
+
+%------------------------------------
+% SECTION 1 : ORDRES DE GRANDEUR
+%------------------------------------
+\rulebox{blue}{Préfixes et ordres de grandeur}{
+Les préfixes permettent d’exprimer facilement des multiples ou sous-multiples d’une unité de base.  
+Chaque préfixe correspond à une puissance de 10 :
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Nom} & \textbf{Symbole} & \textbf{Facteur / Puissance de 10} \\
+\hline
+Téra & T & $10^{12}$ \\
+Giga & G & $10^{9}$ \\
+Méga & M & $10^{6}$ \\
+Kilo & k & $10^{3}$ \\
+Hecto & h & $10^{2}$ \\
+Déca & da & $10^{1}$ \\
+\hline
+Base & — & $10^{0}$ \\
+\hline
+Déci & d & $10^{-1}$ \\
+Centi & c & $10^{-2}$ \\
+Milli & m & $10^{-3}$ \\
+Micro & $\mu$ & $10^{-6}$ \\
+Nano & n & $10^{-9}$ \\
+\hline
+\end{tabular}
+\end{center}
+}
+
+%------------------------------------
+% SECTION 2 : UNITÉS EN PHYSIQUE
+%------------------------------------
+\rulebox{green}{Les grandeurs physiques et leurs unités}{
+Le \textbf{Système International (SI)} repose sur 7 unités fondamentales :
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Grandeur} & \textbf{Unité (nom)} & \textbf{Symbole} \\
+\hline
+Longueur & mètre & m \\
+Masse & kilogramme & kg \\
+Temps & seconde & s \\
+Intensité électrique & ampère & A \\
+Température & kelvin & K \\
+Quantité de matière & mole & mol \\
+Intensité lumineuse & candela & cd \\
+\hline
+\end{tabular}
+\end{center}
+}
+
+%------------------------------------
+% SECTION 3 : UNITÉS DÉRIVÉES
+%------------------------------------
+\rulebox{orange}{Unités dérivées et usuelles}{
+\begin{itemize}
+\item Vitesse : $v = \dfrac{m}{s}$ → unité : m/s  
+\item Force : $F = m \times a$ → unité : N = kg·m/s²  
+\item Pression : $P = \dfrac{F}{S}$ → unité : Pa = N/m² = kg/(m·s²)
+\item Énergie : $E = F \times d$ → unité : J = N·m = kg·m²/s²
+\item Puissance : $P = \dfrac{E}{t}$ → unité : W = J/s = kg·m²/s³
+\item Volume : $1\,\text{m}^3 = 1000\,\text{L}$ \quad donc $1\,\text{L} = 10^{-3}\,\text{m}^3$
+\item Pression usuelle : $1\,\text{bar} = 10^5\,\text{Pa}$
+\end{itemize}
+}
+
+\newpage
+\begin{center}
+{\LARGE \textbf{Exercices : Conversions et simplifications}}
+\end{center}
+
+%------------------------------------
+% SECTION 4 : CONVERSIONS SIMPLES
+%------------------------------------
+\section*{Conversions simples}
+
+\begin{enumerate}
+\item Convertir $3\times10^{2}\,\text{m}^3$ en litres. \\
+\gridspace
+\item Convertir $10\,000\,\text{m}^2$ en km$^2$. \\
+\gridspace
+\item Convertir $1\,\text{J}$ en kWh. \\
+\gridspace
+\item Convertir $5\,\text{bar}$ en Pa. \\
+\gridspace
+\newpage
+
+\item Convertir $0.25\,\text{km}$ en m. \\
+\gridspace
+\item Convertir $12\,000\,\text{mm}$ en m. \\
+\gridspace
+\item Convertir $3.5\,\text{g}$ en kg. \\
+\gridspace
+\item Convertir $8\,\text{L}$ en m$^3$. \\
+\gridspace
+\newpage
+
+\item Convertir $45\,\text{cm}^2$ en m$^2$. \\
+\gridspace
+\item Convertir $2500\,\text{mg}$ en g. \\
+\gridspace
+\item Convertir $1.2\,\text{h}$ en s. \\
+\gridspace
+\item Convertir $7200\,\text{s}$ en h. \\
+\gridspace
+
+\newpage
+\item Convertir $1.5\,\text{km}$ en mm. \\
+\gridspace
+\item Convertir $10^{-6}\,\text{m}$ en µm. \\
+\gridspace
+\item Convertir $5\,\text{t}$ en kg. \\
+\gridspace
+\item Convertir $1.2\times10^6\,\text{Pa}$ en bar. \\
+\gridspace
+\newpage
+\item Convertir $2500\,\text{cm}^3$ en L. \\
+\gridspace
+\item Convertir $0.75\,\text{m}^3$ en L. \\
+\gridspace
+\item Convertir $3\times10^5\,\text{mm}^2$ en m$^2$. \\
+\gridspace
+\item Convertir $4.2\times10^7\,\text{µm}$ en m. \\
+\gridspace
+\end{enumerate}
+
+\newpage
+%------------------------------------
+% SECTION 5 : SIMPLIFICATION D'UNITÉS
+%------------------------------------
+\section*{Simplification d’unités (en SI)}
+
+\begin{enumerate}
+\item $\dfrac{\text{kg·m}}{\text{s}^2}$ \\
+\gridspace
+\item $\dfrac{\text{N·m}}{\text{s}}$ \\
+\gridspace
+\item $\dfrac{\text{J}}{\text{s·m}^2}$ \\
+\gridspace
+\item $\dfrac{\text{kg·m}^2}{\text{s}^3}$ \\
+\gridspace
+
+\newpage
+
+\item $\dfrac{\text{W·s}}{\text{m}^2}$ \\
+\gridspace
+\item $\dfrac{\text{N·m}}{\text{C}}$ \\
+\gridspace
+\item $\dfrac{\text{C}}{\text{s}}$ \\
+\gridspace
+\item $\dfrac{\text{V·A}}{\text{m}^2}$ \\
+\gridspace
+
+\newpage
+
+\item $\dfrac{\text{kg·m}^2}{\text{s}^2·\text{C}}$ \\
+\gridspace
+\item $\dfrac{\text{Pa·m}^3}{\text{s}}$ \\
+\gridspace
+\item $\dfrac{\text{N}}{\text{A·m}}$ \\
+\gridspace
+\item $\dfrac{\text{J}}{\text{C}}$ \\
+\gridspace
+
+\newpage
+\item $\dfrac{\text{V·s}}{\text{m}}$ \\
+\gridspace
+\item $\dfrac{\text{N·m}}{\text{mol}}$ \\
+\gridspace
+\item $\dfrac{\text{W}}{\text{A}}$ \\
+\gridspace
+\item $\dfrac{\text{kg·m}}{\text{s·A}}$ \\
+\gridspace
+\newpage
+\item $\dfrac{\text{Pa}}{\text{kg/m}^3}$ \\
+\gridspace
+\item $\dfrac{\text{J}}{\text{mol·K}}$ \\
+\gridspace
+\item $\dfrac{\text{N·m}}{\text{s·A}}$ \\
+\gridspace
+\item $\dfrac{\text{C·V}}{\text{s}}$ \\
+\gridspace
+\end{enumerate}
+
+\newpage
+%------------------------------------
+% SECTION 6 : APPLICATIONS NUMÉRIQUES
+%------------------------------------
+\section*{Applications numériques et cohérence d’unités}
+
+\begin{enumerate}
+\item $100\,\text{N} \times 2\,\text{m} =$ ? (en J) \\
+\gridspace
+\item $500\,\text{N} \times 2\,\text{km} =$ ? (en J et en kWh) \\
+\gridspace
+\item $\dfrac{3600\,\text{J}}{60\,\text{s}} =$ ? (en W) \\
+\gridspace
+\item $20\,\text{m/s} \times 5\,\text{s} =$ ? (en m) \\
+\gridspace
+\newpage
+
+\item $50\,\text{kg} \times 9.81\,\text{m/s}^2 =$ ? (en N) \\
+\gridspace
+\item $200\,\text{W} \times 10\,\text{s} =$ ? (en J) \\
+\gridspace
+\item $\dfrac{1500\,\text{J}}{250\,\text{s}} =$ ? (en W) \\
+\gridspace
+\item $0.5\,\text{A} \times 10\,\text{V} =$ ? (en W) \\
+\gridspace
+\newpage
+\item $5\,\text{W} \times 3600\,\text{s} =$ ? (en J) \\
+\gridspace
+\item $\dfrac{10\,\text{N}}{2\,\text{m}^2} =$ ? (en Pa) \\
+\gridspace
+\item $3\,\text{kg} \times (2\,\text{m/s})^2 =$ ? (en J) \\
+\gridspace
+\item $\dfrac{1000\,\text{J}}{500\,\text{W}} =$ ? (en s) \\
+\gridspace
+\newpage
+
+\item $12\,\text{m/s} \times 180\,\text{s} =$ ? (en m) \\
+\gridspace
+\item $1\,\text{kWh} =$ ? (en J) \\
+\gridspace
+\item $\dfrac{300\,\text{N·m}}{10\,\text{s}} =$ ? (en W) \\
+\gridspace
+\item $\dfrac{2\,\text{m}^3}{120\,\text{s}} =$ ? (en L/s) \\
+\gridspace
+\newpage
+\item $1000\,\text{W} \times 1\,\text{h} =$ ? (en J et kWh) \\
+\gridspace
+\item $\dfrac{10\,\text{J}}{2\,\text{C}} =$ ? (en V) \\
+\gridspace
+\item $1.5\,\text{mol} \times 8.314\,\text{J/mol·K} \times 300\,\text{K} =$ ? (en J) \\
+\gridspace
+\item $2.5\,\text{A} \times 20\,\text{Ω} =$ ? (en V) \\
+\gridspace
+\end{enumerate}
+
+\newpage
+%------------------------------------
+% SECTION 7 : CONVERSIONS COMPOSÉES
+%------------------------------------
+\section*{Conversions composées}
+
+\begin{enumerate}
+\item Convertir $72\,\text{km/h}$ en m/s. \\
+\gridspace
+\item Convertir $1.5\,\text{m}^3/\text{min}$ en L/s. \\
+\gridspace
+\item Convertir $2.5\,\text{MW}$ en J/h. \\
+\gridspace
+\item Convertir $100\,\text{cm}^3$ en m$^3$. \\
+\gridspace
+\newpage
+\item Convertir $90\,\text{km/h}$ en m/s. \\
+\gridspace
+\item Convertir $25\,\text{L/min}$ en m$^3$/h. \\
+\gridspace
+\item Convertir $5.2\,\text{m/s}$ en km/h. \\
+\gridspace
+\item Convertir $3.6\,\text{km/h}$ en m/s. \\
+\gridspace
+\newpage
+\item Convertir $250\,\text{W}$ en kWh sur 2 heures. \\
+\gridspace
+\item Convertir $15\,\text{mL}$ en m$^3$. \\
+\gridspace
+\item Convertir $4\,\text{t/h}$ en kg/s. \\
+\gridspace
+\item Convertir $12\,\text{m}^3$/h en L/s. \\
+\gridspace
+\newpage
+\item Convertir $120\,\text{km/h}$ en m/s. \\
+\gridspace
+\item Convertir $1.2\,\text{mL/s}$ en L/h. \\
+\gridspace
+\item Convertir $75\,\text{W}$ en J/min. \\
+\gridspace
+\item Convertir $500\,\text{L/min}$ en m$^3$/s. \\
+\gridspace
+\newpage
+\item Convertir $1000\,\text{kJ/h}$ en W. \\
+\gridspace
+\item Convertir $2.5\,\text{m/s}$ en km/h. \\
+\gridspace
+\item Convertir $180\,\text{L/h}$ en m$^3$/s. \\
+\gridspace
+\item Convertir $4.5\,\text{m}^3$/min en L/s. \\
+\gridspace
+\end{enumerate}
+
+\end{document}
