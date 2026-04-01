@@ -1,0 +1,416 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{siunitx}
+\usepackage{tcolorbox}
+\usepackage{geometry}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+
+\geometry{margin=2cm}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\textbf{Holiday Workbook --- Revision}}
+\rhead{\thepage}
+
+\definecolor{energyblue}{RGB}{30,80,160}
+\definecolor{powerred}{RGB}{180,50,50}
+
+\tcbset{sharp corners, colback=white, colframe=black!60, boxrule=0.8pt, left=6pt, right=6pt, top=4pt, bottom=4pt}
+
+\newcommand{\rappelbox}[2]{%
+\begin{tcolorbox}[colback=#1!10!white,colframe=#1!60!black,title=\textbf{Key Facts}]
+#2
+\end{tcolorbox}
+}
+
+\newcommand{\gridspace}{%
+\vspace{0.5cm}
+\begin{tikzpicture}[scale=0.5]
+\draw[step=0.5cm,gray!30,very thin] (0,0) grid (27,8);
+\end{tikzpicture}
+\vspace{0.5cm}
+}
+
+\begin{document}
+
+\begin{center}
+{\LARGE \textbf{Holiday Workbook}}\\[0.3cm]
+{\large Revision --- Mathematics and Physics}\\[0.2cm]
+{\normalsize Go over the basics at your own pace!}
+\end{center}
+
+\vspace{1cm}
+
+%% Chapter 1
+\section*{Chapter 1 -- Signed numbers and order of operations}
+
+\rappelbox{blue}{%
+\begin{itemize}
+  \item \textbf{Same sign:} add the absolute values and keep the sign.
+        Example: $(-3)+(-5)=-8$
+  \item \textbf{Different signs:} 
+        Example: $(+8)+(-3)=+5$
+  \item \textbf{Subtraction:} subtracting is the same as adding the opposite: $a - b = a + (-b)$
+  \item \textbf{Order of operations:} Parentheses $\rightarrow$ Exponents $\rightarrow$ $\times / \div$ $\rightarrow$ $+ / -$
+\end{itemize}
+}
+
+\textbf{Exercise 1.} \quad $(-11) + (+7) = $
+
+\gridspace
+
+\textbf{Exercise 2.} \quad $(3) + (-7) = $
+
+\gridspace
+
+\textbf{Exercise 3.} \quad $(-2) - (-9) = $
+
+\gridspace
+
+\newpage
+
+%% Chapter 2
+\section*{Chapter 2 -- Multiplication and distributivity}
+
+\rappelbox{blue}{%
+\begin{itemize}
+  \item \textbf{Same signs} $\rightarrow$ positive result; \textbf{different signs} $\rightarrow$ negative result
+  \item \textbf{Distributivity:} $a(b+c) = ab + ac$
+  \item \textbf{Notable identity:} $(a+b)^{2} = a^{2} + 2ab + b^{2}$
+  \item \textbf{Exponent:} $(a)^{4} = a*a*a*a$
+\end{itemize}
+}
+
+\vspace{0.5cm}
+
+\textbf{Exercise 1.} \quad $(-3) \times (+4) = $
+
+\gridspace
+
+\textbf{Exercise 3.} \quad Expand: $4 \times (3 + 5) = $
+
+\gridspace
+
+\textbf{Exercise 4.} \quad Expand: $(x + 3)^2 = $
+
+\gridspace
+
+\newpage 
+
+\textbf{Exercise 5.} \quad Expand using the notable identity: $(x + y)^{2} = $
+
+\gridspace
+
+\textbf{Exercise 6.} \quad $(3 + 4)(3 - 4) = $
+
+\gridspace
+
+\textbf{Exercise 7.} \quad $(x + y)(x - y) = $
+
+\gridspace
+
+\textbf{Exercise 8.} \quad $\dfrac{(x + y)(x - y)(x - y)}{(x + y)} = $
+
+\gridspace
+
+\newpage
+
+%% Chapter 3
+\section*{Chapter 3 -- Fractions}
+
+\rappelbox{green}{%
+\begin{itemize}
+  \item \textbf{Same denominator:} $\dfrac{a}{b} + \dfrac{c}{b} = \dfrac{a+c}{b}$
+  \item \textbf{Different denominators:} find a common denominator
+  \item \textbf{Multiplication:} $\dfrac{a}{b} \times \dfrac{c}{d} = \dfrac{ac}{bd}$
+  \item \textbf{Division:} $\dfrac{a}{b} \div \dfrac{c}{d} = \dfrac{a}{b} \times \dfrac{d}{c}$
+  \item \textbf{Simplification:} $\dfrac{ac}{bc} = \dfrac{a}{b}$
+\end{itemize}
+}
+
+\vspace{0.5cm}
+
+\textbf{Exercise 1.} \quad $\dfrac{3}{7} + \dfrac{2}{7} = $
+
+\gridspace
+
+\textbf{Exercise 2.} \quad $\dfrac{1}{3} + \dfrac{1}{4} = $
+
+\gridspace
+
+\textbf{Exercise 3.} \quad $\dfrac{2}{5} \times \dfrac{3}{4} = $
+
+\gridspace
+
+\newpage
+\textbf{Exercise 4.} \quad $\dfrac{3}{4} \div \dfrac{2}{3} = $
+
+\gridspace
+
+\textbf{Exercise 5.} \quad Simplify $\dfrac{12}{18}$
+
+\gridspace
+
+\textbf{Exercise 6.} \quad $\dfrac{1}{2} + \dfrac{2}{3} - \dfrac{1}{6} = $
+
+\gridspace
+
+\textbf{Exercise 7.} \quad Simplify into a single fraction $\dfrac{xy}{x} + \dfrac{xz}{z} - \dfrac{yz}{y} = $
+
+\gridspace
+
+\newpage
+
+%% Chapter 4
+\section*{Chapter 4 -- Exponents}
+
+\rappelbox{orange}{%
+\begin{itemize}
+  \item $a^{m} \times a^{n} = a^{m+n}$
+  \item $\dfrac{a^{m}}{a^{n}} = a^{m-n}$
+  \item $(a^{m})^{n} = a^{m \times n}$
+  \item $(ab)^{n} = a^{n}\,b^{n}$
+  \item $a^{-n} = \dfrac{1}{a^{n}}$
+  \item $a^{0} = 1$
+  \item $a^{1/n} = \sqrt[n]{a}$
+\end{itemize}
+}
+
+\vspace{0.5cm}
+
+\textbf{Exercise 1.} \quad $3^{2} \times 3^{3} = $
+
+\gridspace
+
+\textbf{Exercise 2.} \quad $\dfrac{5^{6}}{5^{4}} = $
+
+\gridspace
+
+\textbf{Exercise 3.} \quad $(2^{3})^{2} = $
+
+\gridspace
+
+\newpage
+\textbf{Exercise 4.} \quad $(3 \times 4)^{2} = $
+
+\gridspace
+
+\textbf{Exercise 5.} \quad $10^{-2} = $
+
+\gridspace
+
+\textbf{Exercise 6.} \quad $7^{0} = $
+
+\gridspace
+
+\textbf{Exercise 7.} \quad $\left(\dfrac{xy}{3z}\right)^{3} \times \left(\dfrac{1}{zyx}\right)^{2} = $
+
+\gridspace
+
+\newpage
+
+%% Chapter 5
+\section*{Chapter 5 -- SI Units and conversions}
+
+\rappelbox{blue}{%
+\begin{itemize}
+  \item \textbf{7 base units:} m, kg, s, A, K, mol, cd
+  \item \textbf{Prefixes:} k $= 10^{3}$, \; c $= 10^{-2}$, \; m $= 10^{-3}$, \; M $= 10^{6}$, \; $\mu = 10^{-6}$
+  \item \textbf{Areas:} 2 zeros per step \quad / \quad \textbf{Volumes:} 3 zeros per step
+  \item Convert to SI units before using a formula to ensure unit consistency
+  \item $1\,\text{L} = 10^{-3}\,\text{m}^{3}$ \qquad $1\,\text{km/h} = \dfrac{1000}{3600}\,\text{m/s}$ \qquad $1\,\text{bar} = 10^{5}\,\text{Pa}$
+\end{itemize}
+}
+
+\vspace{0.5cm}
+
+\textbf{Exercise 1.} \quad Convert $3.5\,\text{km}$ to m.
+
+\gridspace
+
+\textbf{Exercise 2.} \quad Convert $250\,\text{g}$ to kg.
+
+\gridspace
+
+\textbf{Exercise 3.} \quad Convert $2\,\text{h}$ to s.
+
+\gridspace
+
+\newpage
+\textbf{Exercise 4.} \quad Convert $36\,\text{km/h}$ to m/s.
+
+\gridspace
+
+\textbf{Exercise 5.} \quad Convert $50\,\text{cm}^{2}$ to m$^{2}$.
+
+\gridspace
+
+\textbf{Exercise 6.} \quad Simplify $\dfrac{\text{kg} \cdot \text{m}}{\text{s}^{2}}$ (what unit?)
+
+\gridspace
+
+\textbf{Exercise 7.} \quad Simplify $\dfrac{\text{J}}{\text{s}}$ (what unit?)
+
+\gridspace
+
+\newpage
+\textbf{Exercise 8.} \quad Convert 35 m$^{3}$ of water to kg.
+
+\gridspace
+
+\textbf{Exercise 9.} \quad Convert 27 m$^{2}$ to cm$^{2}$.
+
+\gridspace
+
+\textbf{Exercise 10.} \quad Convert 27 m$^{3}$ to cm$^{3}$.
+
+\gridspace
+
+\textbf{Exercise 11.} \quad Convert 16 kWh to J.
+
+\gridspace
+
+\newpage
+
+%% Chapter 6
+\section*{Chapter 6 -- Energy}
+
+\rappelbox{green}{%
+\begin{itemize}
+  \item $E_{p} = mgh$ \quad (gravitational potential energy)
+  \item $E_{c} = \dfrac{1}{2}mv^{2}$ \quad (kinetic energy)
+  \item $E_{th} = mc\,\Delta T$ \quad (thermal energy, $c = 4180\,\text{J/(kg\ensuremath{\cdot}K)}$ for water)
+  \item $E_{el} = UIt$ \quad (electrical energy)
+  \item \textbf{Conservation:} $E_{\text{input}} = E_{\text{output}} + E_{\text{lost}}$
+\end{itemize}
+}
+
+\vspace{0.5cm}
+
+\textbf{Exercise 1.} \quad A $3\,\text{kg}$ object is at a height of $4\,\text{m}$. Calculate $E_{p}$. \; ($g = 9.81\,\text{m/s}^{2}$)
+
+\gridspace
+
+\textbf{Exercise 2.} \quad A $0.5\,\text{kg}$ marble rolls at $6\,\text{m/s}$. Calculate $E_{c}$.
+
+\gridspace
+
+\textbf{Exercise 3.} \quad $2\,\text{kg}$ of water is heated from $20\,^{\circ}\text{C}$ to $50\,^{\circ}\text{C}$. Calculate $E_{th}$. \; ($c = 4180\,\text{J/(kg\ensuremath{\cdot}K)}$)
+
+\gridspace
+
+\newpage
+\textbf{Exercise 4.} \quad A lamp operates at $12\,\text{V}$ and $0.5\,\text{A}$ for $5\,\text{min}$. Calculate $E_{el}$.
+
+\gridspace
+
+\textbf{Exercise 5.} \quad A $2\,\text{kg}$ object falls from $5\,\text{m}$. What is its speed just before hitting the ground? (use $E_{p} = E_{c}$)
+
+\gridspace
+
+\textbf{Exercise 6.} \quad A spring ($k = 100\,\text{N/m}$) is compressed by $0.1\,\text{m}$. Calculate $E_{\text{el}} = \dfrac{1}{2}kx^{2}$.
+
+\gridspace
+
+\textbf{Exercise 7.} \quad A water rocket reaches an altitude of $60\,\text{m}$. Calculate its initial velocity.
+
+\gridspace
+
+\newpage
+
+%% Chapter 7
+\section*{Chapter 7 -- Power and work}
+
+\rappelbox{orange}{%
+\begin{itemize}
+  \item $P = \dfrac{E}{t}$ \quad (power = energy / time)
+  \item $P = Fv$ \quad (mechanical power)
+  \item $W = F \times d \times \cos(\theta)$ \quad (work done by a force)
+  \item $1\,\text{W} = 1\,\text{J/s}$
+  \item $1\,\text{kWh} = 3.6 \times 10^{6}\,\text{J}$
+\end{itemize}
+}
+
+\vspace{0.5cm}
+
+\textbf{Exercise 1.} \quad A motor delivers $5000\,\text{J}$ in $10\,\text{s}$. What is its power?
+
+\gridspace
+
+\textbf{Exercise 2.} \quad A $60\,\text{W}$ light bulb is left on for $3\,\text{h}$. How much energy does it consume in J? In kWh?
+
+\gridspace
+
+\textbf{Exercise 3.} \quad A $600\,\text{kg}$ elevator rises $8\,\text{m}$ in $10\,\text{s}$. What is the power? \; ($g = 9.81\,\text{m/s}^{2}$)
+
+\gridspace
+
+\newpage
+\textbf{Exercise 4.} \quad A cyclist exerts a force of $40\,\text{N}$ and rides at $7\,\text{m/s}$. What power does he develop? How much energy to travel 1 km?
+
+\gridspace
+
+\textbf{Exercise 5.} \quad Convert $2\,\text{kWh}$ to J.
+
+\gridspace
+
+\textbf{Exercise 6.} \quad A $1500\,\text{W}$ heater runs for $30\,\text{min}$. How much energy does it deliver?
+
+\gridspace
+
+\textbf{Exercise 7.} \quad A car drives at $120\,\text{km/h}$ and experiences a drag force of $400\,\text{N}$. What power does it develop? How much energy to travel 1 km?
+
+\gridspace
+
+\newpage
+
+%% Chapter 8
+\section*{Chapter 8 -- Integrated problem: Mini hydroelectric power plant}
+
+\begin{tcolorbox}[colback=gray!5!white,colframe=black!60,title=\textbf{Scenario}]
+A small dam holds a water reservoir located $h = 50\,\text{m}$ above a turbine. The reservoir contains $V = 2000\,\text{m}^{3}$ of water. The turbine has an efficiency of $85\,\%$.
+\end{tcolorbox}
+
+\vspace{0.5cm}
+
+\textbf{Question 1.} \quad Calculate the mass of water in the reservoir. \; ($\rho = 1000\,\text{kg/m}^{3}$)
+
+\gridspace
+
+\textbf{Question 2.} \quad Calculate the total potential energy of the water. \; ($g = 9.81\,\text{m/s}^{2}$)
+
+\gridspace
+
+\textbf{Question 3.} \quad Taking the efficiency into account, how much electrical energy can the turbine produce?
+
+\gridspace
+
+\newpage
+\textbf{Question 4.} \quad Convert this energy to kWh.
+
+\gridspace
+
+\textbf{Question 5.} \quad If the turbine has a power output of $200\,\text{kW}$, how long (in hours) can it operate?
+
+\gridspace
+
+\textbf{Question 6.} \quad A locomotive requires $2\,\text{MW}$ to accelerate. How many trains can it start at the same time?
+
+\gridspace
+
+\textbf{Question 7.} \quad Given that a train carries 200 passengers and requires $5\,\text{kWh}$ to travel $1\,\text{km}$, how many passenger-km can be covered with the energy stored in the lake? Take the efficiency into account.
+
+\gridspace
+
+\vspace{1cm}
+
+\begin{center}
+
+{\Large \textbf{Well done, you have finished your holiday workbook!}}\\[0.3cm]
+\end{center}
+
+\end{document}

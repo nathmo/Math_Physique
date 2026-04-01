@@ -1,0 +1,377 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{siunitx}
+\usepackage{tcolorbox}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+
+\geometry{margin=2cm}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\textbf{Guide Parents --- Corrections et conseils}}
+\rhead{\thepage}
+
+\definecolor{correctgreen}{RGB}{40,140,40}
+\definecolor{tipblue}{RGB}{30,80,160}
+\definecolor{warnred}{RGB}{200,40,40}
+
+\tcbset{sharp corners, boxrule=0.8pt, left=6pt, right=6pt, top=4pt, bottom=4pt}
+
+\newcommand{\corrbox}[1]{
+\begin{tcolorbox}[colback=correctgreen!8!white,colframe=correctgreen!60!black]
+#1
+\end{tcolorbox}
+}
+
+\newcommand{\tipbox}[1]{
+\begin{tcolorbox}[colback=tipblue!8!white,colframe=tipblue!60!black,title=\textbf{Comment expliquer}]
+#1
+\end{tcolorbox}
+}
+
+\newcommand{\warnbox}[1]{
+\begin{tcolorbox}[colback=warnred!8!white,colframe=warnred!60!black,title=\textbf{Erreurs fr\'equentes}]
+#1
+\end{tcolorbox}
+}
+
+\begin{document}
+
+\begin{center}
+{\LARGE \textbf{Guide pour les Parents}}\\[0.3cm]
+{\large Corrections, explications et conseils p\'edagogiques}\\[0.2cm]
+{\normalsize Pour accompagner le cahier de vacances}
+\end{center}
+
+\vspace{0.5cm}
+
+\textbf{Comment utiliser ce guide :}
+\begin{itemize}
+\item Laissez d'abord votre enfant essayer seul(e) chaque exercice.
+\item S'il/elle bloque, lisez la section \guillemotleft{} Comment expliquer \guillemotright{} avant de donner la r\'eponse.
+\item Les erreurs fr\'equentes vous aident \`a rep\'erer o\`u l'enfant se trompe.
+\item Encouragez le raisonnement \'etape par \'etape plut\^ot que le r\'esultat final.
+\end{itemize}
+
+%% ====================================================================
+\section{Nombres relatifs et priorit\'es op\'eratoires}
+%% ====================================================================
+
+\corrbox{
+\begin{enumerate}
+\item $(-11) + (+7) = -4$ \quad (signes diff\'erents : $11 - 7 = 4$, on garde $-$ car $11 > 7$)
+\item $(3) + (-7) = -4$ \quad (signes diff\'erents : $7 - 3 = 4$, on garde $-$ car $7 > 3$)
+\item $(-2) - (-9) = -2 + 9 = +7$ \quad (moins un n\'egatif $=$ plus)
+\end{enumerate}
+}
+
+\tipbox{
+Imaginez une droite gradu\'ee (un thermom\`etre). Ajouter un positif $=$ aller vers la droite/haut. Ajouter un n\'egatif $=$ aller vers la gauche/bas. Pour la soustraction, rappelez que soustraire c'est ajouter l'oppos\'e : $a - b = a + (-b)$. Donc $(-2) - (-9) = -2 + (+9)$. Pour les priorit\'es, la phrase mn\'emotechnique est : \guillemotleft{} Parenth\`eses d'abord, Puis Puissances, Puis Multiplications/Divisions, Puis Additions/Soustractions \guillemotright{}.
+}
+
+\warnbox{
+Erreur classique : confondre $(-11) + (+7)$ avec $(-11) + (-7) = -18$. L'enfant ne regarde pas le signe du second nombre. Demandez : \guillemotleft{} Le $7$ est positif ou n\'egatif ? Dans quelle direction va-t-on ? \guillemotright{}
+}
+
+%% ====================================================================
+\section{Multiplication et distributivit\'e}
+%% ====================================================================
+
+\corrbox{
+\begin{enumerate}
+\item $(-3) \times (+4) = -12$ \quad (signes diff\'erents $\rightarrow$ n\'egatif)
+\item (pas d'exercice 2)
+\item $4 \times (3 + 5) = 4 \times 3 + 4 \times 5 = 12 + 20 = 32$
+\item $(x + 3)^{2} = (x+3)(x+3) = x^{2} + 3x + 3x + 9 = x^{2} + 6x + 9$
+\item $(x + y)^{2} = x^{2} + 2xy + y^{2}$ \quad (identit\'e remarquable)
+\item $(3 + 4)(3 - 4) = 3^{2} - 4^{2} = 9 - 16 = -7$. \\ Ou directement : $7 \times (-1) = -7$
+\item $(x + y)(x - y) = x^{2} - y^{2}$ \quad (identit\'e remarquable : diff\'erence de carr\'es)
+\item $\dfrac{(x + y)(x - y)(x - y)}{(x + y)} = (x-y)(x-y) = (x-y)^{2} = x^{2} - 2xy + y^{2}$\\[0.2cm]
+On simplifie $(x+y)$ en haut et en bas, puis on d\'eveloppe le carr\'e restant.
+\end{enumerate}
+}
+
+\tipbox{
+Pour les signes : \guillemotleft{} moins fois moins $=$ plus \guillemotright{} peut sembler arbitraire. Expliquez avec la logique : si perdre ($-$) une dette ($-$) c'est gagner ($+$). Pour la distributivit\'e, dessinez des rectangles : l'aire de $a \times (b + c)$ c'est un grand rectangle qu'on peut couper en $a \times b$ et $a \times c$.
+
+\vspace{0.2cm}
+Pour l'exercice 8, guidez l'enfant en deux temps : d'abord simplifier la fraction (on \guillemotleft{} barre \guillemotright{} le $(x+y)$ commun), puis d\'evelopper ce qui reste. C'est un bon exercice pour combiner simplification de fractions et identit\'es remarquables.
+}
+
+\warnbox{
+Erreur classique ex.~4 : \'ecrire $(x + 3)^{2} = x^{2} + 9$ en oubliant le double produit $2 \times x \times 3 = 6x$. Rappelez : $(a+b)^{2} \neq a^{2} + b^{2}$, il faut le terme $2ab$ au milieu.
+
+\vspace{0.2cm}
+Erreur classique ex.~8 : ne pas oser simplifier la fraction. Rappelez que $\dfrac{A \times B}{A} = B$ quand $A \neq 0$.
+}
+
+%% ====================================================================
+\section{Fractions}
+%% ====================================================================
+
+\corrbox{
+\begin{enumerate}
+\item $\dfrac{3}{7} + \dfrac{2}{7} = \dfrac{5}{7}$ \quad (m\^eme d\'enominateur, on additionne les num\'erateurs)
+\item $\dfrac{1}{3} + \dfrac{1}{4} = \dfrac{4}{12} + \dfrac{3}{12} = \dfrac{7}{12}$
+\item $\dfrac{2}{5} \times \dfrac{3}{4} = \dfrac{6}{20} = \dfrac{3}{10}$
+\item $\dfrac{3}{4} \div \dfrac{2}{3} = \dfrac{3}{4} \times \dfrac{3}{2} = \dfrac{9}{8}$
+\item $\dfrac{12}{18} = \dfrac{6 \times 2}{6 \times 3} = \dfrac{2}{3}$
+\item $\dfrac{1}{2} + \dfrac{2}{3} - \dfrac{1}{6} = \dfrac{3}{6} + \dfrac{4}{6} - \dfrac{1}{6} = \dfrac{6}{6} = 1$
+\item $\dfrac{xy}{x} + \dfrac{xz}{z} - \dfrac{yz}{y} = y + x - z = x + y - z$\\[0.2cm]
+On simplifie chaque fraction s\'epar\'ement : $\dfrac{xy}{x} = y$, \; $\dfrac{xz}{z} = x$, \; $\dfrac{yz}{y} = z$.
+\end{enumerate}
+}
+
+\tipbox{
+Utilisez des parts de pizza ou de g\^ateau. $\frac{1}{3}$ c'est un g\^ateau coup\'e en 3, on prend 1 part. Pour mettre au m\^eme d\'enominateur : \guillemotleft{} on coupe les parts plus petit pour que les morceaux aient la m\^eme taille \guillemotright{}. Pour la division par une fraction : \guillemotleft{} diviser par $\frac{2}{3}$ c'est demander combien de fois $\frac{2}{3}$ entre dans ma quantit\'e --- on retourne et on multiplie \guillemotright{}.
+
+\vspace{0.2cm}
+Pour l'exercice 7, l'enfant doit reconna\^itre que chaque fraction se simplifie d'abord individuellement. C'est un bon r\'eflexe \`a d\'evelopper : \guillemotleft{} avant de tout combiner, simplifie chaque morceau \guillemotright{}.
+}
+
+\warnbox{
+Erreur classique ex.~2 : \'ecrire $\frac{1}{3} + \frac{1}{4} = \frac{2}{7}$ (addition des num\'erateurs ET des d\'enominateurs). Rappelez qu'on ne peut additionner que des parts de m\^eme taille (m\^eme d\'enominateur).
+
+\vspace{0.2cm}
+Erreur classique ex.~7 : essayer de mettre au m\^eme d\'enominateur sans simplifier d'abord. Ici, chaque fraction se r\'eduit directement.
+}
+
+%% ====================================================================
+\section{Puissances}
+%% ====================================================================
+
+\corrbox{
+\begin{enumerate}
+\item $3^{2} \times 3^{3} = 3^{2+3} = 3^{5} = 243$
+\item $\dfrac{5^{6}}{5^{4}} = 5^{6-4} = 5^{2} = 25$
+\item $(2^{3})^{2} = 2^{3 \times 2} = 2^{6} = 64$
+\item $(3 \times 4)^{2} = 3^{2} \times 4^{2} = 9 \times 16 = 144$
+\item $10^{-2} = \dfrac{1}{10^{2}} = \dfrac{1}{100} = 0{,}01$
+\item $7^{0} = 1$
+\item $\left(\dfrac{xy}{3z}\right)^{3} \times \left(\dfrac{1}{zyx}\right)^{2}$\\[0.3cm]
+On d\'eveloppe chaque puissance s\'epar\'ement :
+\[
+\left(\dfrac{xy}{3z}\right)^{3} = \dfrac{x^{3}y^{3}}{27z^{3}}
+\qquad\text{et}\qquad
+\left(\dfrac{1}{xyz}\right)^{2} = \dfrac{1}{x^{2}y^{2}z^{2}}
+\]
+Puis on multiplie :
+\[
+\dfrac{x^{3}y^{3}}{27z^{3}} \times \dfrac{1}{x^{2}y^{2}z^{2}} = \dfrac{x^{3}y^{3}}{27\,x^{2}y^{2}z^{5}} = \dfrac{xy}{27z^{5}}
+\]
+On simplifie : $x^{3}/x^{2} = x$, \; $y^{3}/y^{2} = y$, \; $z^{3} \times z^{2} = z^{5}$.
+\end{enumerate}
+}
+
+\tipbox{
+Revenez toujours \`a la d\'efinition : $a^{3} = a \times a \times a$. Si l'enfant ne comprend pas $a^{m} \times a^{n} = a^{m+n}$, \'ecrivez les facteurs un par un : $3^{2} \times 3^{3} = (3 \times 3) \times (3 \times 3 \times 3) = 3^{5}$. Pour l'exposant n\'egatif : \guillemotleft{} l'exposant n\'egatif met le nombre en bas de la fraction \guillemotright{}. Pour $a^{0} = 1$ : \guillemotleft{} si on divise $a^{1}$ par $a^{1}$, on obtient $a^{0} = \frac{a}{a} = 1$ \guillemotright{}.
+
+\vspace{0.2cm}
+Pour l'exercice 7, la strat\'egie est : 1) appliquer la puissance \`a chaque facteur du num\'erateur et du d\'enominateur, 2) multiplier les deux fractions, 3) simplifier les lettres identiques en haut et en bas avec la r\`egle $a^{m}/a^{n} = a^{m-n}$.
+}
+
+\warnbox{
+Erreur classique ex.~1 : \'ecrire $3^{2} \times 3^{3} = 9^{5}$ ou $3^{6}$. On additionne les EXPOSANTS, pas les bases, et on ne multiplie pas les exposants (\c ca c'est pour la puissance d'une puissance).
+
+\vspace{0.2cm}
+Erreur classique ex.~7 : oublier d'appliquer la puissance au coefficient $3$ (\'ecrire $3z^{3}$ au lieu de $27z^{3}$). Rappelez que $(3z)^{3} = 3^{3} \times z^{3} = 27z^{3}$.
+}
+
+%% ====================================================================
+\section{Unit\'es SI et conversions}
+%% ====================================================================
+
+\corrbox{
+\begin{enumerate}
+\item $3{,}5\,\text{km} = 3500\,\text{m}$ \quad ($\times 1000$)
+\item $250\,\text{g} = 0{,}250\,\text{kg}$ \quad ($\div 1000$)
+\item $2\,\text{h} = 7200\,\text{s}$ \quad ($\times 3600$)
+\item $36\,\text{km/h} = 36 \times \dfrac{1000}{3600} = \dfrac{36}{3{,}6} = 10\,\text{m/s}$
+\item $50\,\text{cm}^{2} = 50 \times 10^{-4}\,\text{m}^{2} = 0{,}0050\,\text{m}^{2}$ \quad (surfaces $\rightarrow$ facteur $10^{-4}$ entre cm$^{2}$ et m$^{2}$)
+\item $\dfrac{\text{kg} \cdot \text{m}}{\text{s}^{2}} = \text{Newton (N)}$
+\item $\dfrac{\text{J}}{\text{s}} = \text{Watt (W)}$
+\item $35\,\text{m}^{3} \text{ d'eau} = 35 \times 1000 = 35\,000\,\text{kg}$\\[0.1cm]
+On utilise $m = \rho \times V$ avec $\rho_{\text{eau}} = 1000\,\text{kg/m}^{3}$.
+\item $27\,\text{m}^{2} = 27 \times 10^{4}\,\text{cm}^{2} = 270\,000\,\text{cm}^{2}$\\[0.1cm]
+(Surfaces : $1\,\text{m}^{2} = 10\,000\,\text{cm}^{2}$)
+\item $27\,\text{m}^{3} = 27 \times 10^{6}\,\text{cm}^{3} = 27\,000\,000\,\text{cm}^{3}$\\[0.1cm]
+(Volumes : $1\,\text{m}^{3} = 10^{6}\,\text{cm}^{3}$, car $100^{3} = 10^{6}$)
+\item $16\,\text{kWh} = 16 \times 3{,}6 \times 10^{6}\,\text{J} = 57{,}6 \times 10^{6}\,\text{J} = 5{,}76 \times 10^{7}\,\text{J}$
+\end{enumerate}
+}
+
+\tipbox{
+Pour les conversions simples (longueurs, masses), utilisez le tableau de conversion avec les colonnes km\,|\,hm\,|\,dam\,|\,m\,|\,dm\,|\,cm\,|\,mm. Pour les km/h $\rightarrow$ m/s, retenez la r\`egle : diviser par $3{,}6$. Pour les surfaces et volumes, insistez sur le fait que $1\,\text{m}^{2} = 10\,000\,\text{cm}^{2}$ (pas $100$ !). Dessinez un carr\'e de $1\,\text{m}$ de c\^ot\'e $= 100\,\text{cm}$ de c\^ot\'e, donc $100 \times 100 = 10\,000\,\text{cm}^{2}$.
+
+\vspace{0.2cm}
+Pour l'exercice 8, c'est l'occasion d'introduire la densit\'e : $\rho = m/V$, donc $m = \rho \times V$. Pour l'eau, $\rho = 1000\,\text{kg/m}^{3}$, ce qui signifie que $1\,\text{m}^{3}$ d'eau p\`ese $1000\,\text{kg}$ (une tonne).
+}
+
+\warnbox{
+Erreur classique ex.~5 : \'ecrire $50\,\text{cm}^{2} = 0{,}50\,\text{m}^{2}$ (diviser par $100$ au lieu de $10\,000$). Rappel : pour les surfaces on d\'ecale de DEUX chiffres par colonne, pour les volumes de TROIS.
+
+\vspace{0.2cm}
+Erreur classique ex.~11 : convertir kWh en J avec $\times 1000$ au lieu de $\times 3\,600\,000$. Rappelez que kWh $= 1000\,\text{W} \times 3600\,\text{s} = 3{,}6 \times 10^{6}\,\text{J}$.
+}
+
+%% ====================================================================
+\section{\'Energie}
+%% ====================================================================
+
+\corrbox{
+\begin{enumerate}
+\item $E_p = mgh = 3 \times 9{,}81 \times 4 = 117{,}72\,\text{J}$
+\item $E_c = \frac{1}{2}mv^{2} = 0{,}5 \times 0{,}5 \times 6^{2} = 0{,}5 \times 0{,}5 \times 36 = 9\,\text{J}$
+\item $E_{th} = mc\Delta T = 2 \times 4180 \times (50 - 20) = 2 \times 4180 \times 30 = 250\,800\,\text{J}$
+\item $E_{el} = UIt = 12 \times 0{,}5 \times (5 \times 60) = 12 \times 0{,}5 \times 300 = 1800\,\text{J}$
+\item $E_p = E_c \;\Rightarrow\; mgh = \frac{1}{2}mv^{2} \;\Rightarrow\; v = \sqrt{2gh} = \sqrt{2 \times 9{,}81 \times 5} = \sqrt{98{,}1} \approx 9{,}9\,\text{m/s}$
+\item $E_{\text{\'el}} = \frac{1}{2}kx^{2} = 0{,}5 \times 100 \times 0{,}1^{2} = 0{,}5 \times 100 \times 0{,}01 = 0{,}5\,\text{J}$
+\item Fus\'ee \`a eau atteignant $60\,\text{m}$ d'altitude :
+\[E_p = E_c \;\Rightarrow\; mgh = \frac{1}{2}mv^{2} \;\Rightarrow\; v = \sqrt{2gh} = \sqrt{2 \times 9{,}81 \times 60} = \sqrt{1177{,}2} \approx 34{,}3\,\text{m/s}\]
+La masse se simplifie des deux c\^ot\'es, donc la vitesse initiale ne d\'epend pas de la masse de la fus\'ee.\\
+$34{,}3\,\text{m/s} \approx 123\,\text{km/h}$ --- c'est rapide pour une fus\'ee \`a eau !
+\end{enumerate}
+}
+
+\tipbox{
+Pour chaque formule, faites identifier les grandeurs AVANT de calculer : \guillemotleft{} Qu'est-ce que $m$ ? Qu'est-ce que $g$ ? Qu'est-ce que $h$ ? \guillemotright{} Puis v\'erifiez les unit\'es AVANT de faire le calcul. Pour les exercices 5 et 7, guidez \'etape par \'etape : d'abord \'ecrire $E_p = E_c$, puis remplacer, puis simplifier $m$ des deux c\^ot\'es, puis isoler $v$.
+
+\vspace{0.2cm}
+Pour l'exercice 7, insistez sur le fait que la fus\'ee monte en transformant son \'energie cin\'etique (vitesse) en \'energie potentielle (hauteur). Au sommet, toute la vitesse a \'et\'e convertie en hauteur. C'est le m\^eme raisonnement que l'exercice 5, mais \guillemotleft{} \`a l'envers \guillemotright{} : on conna\^it la hauteur et on cherche la vitesse de d\'epart.
+}
+
+\warnbox{
+Erreur classique ex.~4 : oublier de convertir $5\,\text{min}$ en secondes. Rappelez la R\`EGLE ABSOLUE : tout en SI avant de calculer. Erreur ex.~2 : oublier le $\frac{1}{2}$ devant $mv^{2}$ ou oublier de mettre $v$ au carr\'e.
+
+\vspace{0.2cm}
+Erreur classique ex.~7 : croire qu'il faut conna\^itre la masse de la fus\'ee. La masse se simplifie ! Si l'enfant bloque, demandez-lui d'\'ecrire $mgh = \frac{1}{2}mv^{2}$ et de regarder ce qu'on peut simplifier.
+}
+
+%% ====================================================================
+\section{Puissance et travail}
+%% ====================================================================
+
+\corrbox{
+\begin{enumerate}
+\item $P = \dfrac{E}{t} = \dfrac{5000}{10} = 500\,\text{W}$
+\item $E = P \times t = 60 \times (3 \times 3600) = 60 \times 10\,800 = 648\,000\,\text{J}$. \\ En kWh : $E = 0{,}060\,\text{kW} \times 3\,\text{h} = 0{,}18\,\text{kWh}$
+\item $P = \dfrac{mgh}{t} = \dfrac{600 \times 9{,}81 \times 8}{10} = \dfrac{47\,088}{10} = 4708{,}8\,\text{W} \approx 4{,}71\,\text{kW}$
+\item Puissance : $P = Fv = 40 \times 7 = 280\,\text{W}$\\[0.2cm]
+\'Energie pour 1 km : On utilise $W = F \times d = 40 \times 1000 = 40\,000\,\text{J} = 40\,\text{kJ}$\\[0.1cm]
+(Ou bien : $t = d/v = 1000/7 \approx 142{,}9\,\text{s}$, puis $E = P \times t = 280 \times 142{,}9 = 40\,000\,\text{J}$)
+\item $2\,\text{kWh} = 2 \times 3{,}6 \times 10^{6} = 7{,}2 \times 10^{6}\,\text{J} = 7\,200\,000\,\text{J}$
+\item Radiateur : $E = P \times t = 1500 \times (30 \times 60) = 1500 \times 1800 = 2\,700\,000\,\text{J} = 2{,}7\,\text{MJ}$
+\item[7.] Voiture \`a $120\,\text{km/h}$ avec force de tra\^in\'ee de $400\,\text{N}$ :\\[0.2cm]
+Conversion : $120\,\text{km/h} = \dfrac{120}{3{,}6} = 33{,}3\,\text{m/s}$\\[0.2cm]
+Puissance : $P = Fv = 400 \times 33{,}3 = 13\,333\,\text{W} \approx 13{,}3\,\text{kW}$\\[0.2cm]
+\'Energie pour 1 km : $W = F \times d = 400 \times 1000 = 400\,000\,\text{J} = 400\,\text{kJ}$
+\end{enumerate}
+}
+
+\tipbox{
+L'analogie du robinet est tr\`es efficace : la puissance c'est le d\'ebit d'eau, l'\'energie c'est la quantit\'e d'eau totale qui coule. Un gros robinet (puissance \'elev\'ee) remplit le seau (\'energie) plus vite. Pour kWh $\rightarrow$ J : rappelez que kWh c'est kW $\times$ h $= 1000\,\text{W} \times 3600\,\text{s} = 3\,600\,000\,\text{J}$.
+
+\vspace{0.2cm}
+Pour les exercices 4 et 7 (\'energie pour parcourir 1 km), il y a deux m\'ethodes :
+\begin{itemize}
+\item M\'ethode directe : $W = F \times d$ (travail = force $\times$ distance)
+\item M\'ethode indirecte : calculer le temps avec $t = d/v$, puis $E = P \times t$
+\end{itemize}
+Les deux donnent le m\^eme r\'esultat. La m\'ethode directe est plus simple ici.
+}
+
+\warnbox{
+Erreur classique ex.~2 : m\'elanger les unit\'es (mettre $t$ en heures dans $P = E/t$ qui demande des secondes, ou mettre $P$ en W quand on veut des kWh). Astuce : pour les kWh, garder $P$ en kW et $t$ en h ; pour les J, garder $P$ en W et $t$ en s.
+
+\vspace{0.2cm}
+Erreur classique ex.~7 : oublier de convertir $120\,\text{km/h}$ en m/s avant d'utiliser $P = Fv$. Le r\'esultat serait alors faux d'un facteur $3{,}6$.
+}
+
+%% ====================================================================
+\section{Probl\`eme int\'egr\'e --- Mini centrale hydro\'electrique}
+%% ====================================================================
+
+\corrbox{
+\textbf{Question 1 :} Masse d'eau
+\[m = \rho \times V = 1000 \times 2000 = 2\,000\,000\,\text{kg} = 2 \times 10^{6}\,\text{kg}\]
+
+\textbf{Question 2 :} \'Energie potentielle
+\[E_p = mgh = 2 \times 10^{6} \times 9{,}81 \times 50 = 981\,000\,000\,\text{J} = 9{,}81 \times 10^{8}\,\text{J}\]
+
+\textbf{Question 3 :} \'Energie \'electrique (avec rendement)
+\[E_{\text{\'el}} = E_p \times \text{rendement} = 9{,}81 \times 10^{8} \times 0{,}85 = 8{,}34 \times 10^{8}\,\text{J} \approx 834\,000\,000\,\text{J}\]
+
+\textbf{Question 4 :} Conversion en kWh
+\[E_{\text{\'el}} = \frac{8{,}34 \times 10^{8}}{3{,}6 \times 10^{6}} \approx 231{,}6\,\text{kWh}\]
+
+\textbf{Question 5 :} Dur\'ee de fonctionnement
+\[t = \frac{E}{P} = \frac{8{,}34 \times 10^{8}}{200 \times 10^{3}} = 4169\,\text{s} \approx 1{,}16\,\text{h} \text{ (environ 1h10)}\]
+
+\textbf{Question 6 :} Nombre de locomotives
+\[
+P_{\text{turbine}} = 200\,\text{kW} = 0{,}2\,\text{MW}
+\qquad
+P_{\text{locomotive}} = 2\,\text{MW}
+\]
+\[
+\frac{0{,}2\,\text{MW}}{2\,\text{MW}} = 0{,}1
+\]
+La turbine ne peut m\^eme pas faire d\'emarrer \textbf{une seule locomotive}. Il faudrait une puissance 10 fois plus grande. (La turbine produit $200\,\text{kW}$, la locomotive demande $2000\,\text{kW}$.)
+
+\textbf{Question 7 :} Km-passagers avec l'\'energie du lac
+
+\'Energie \'electrique disponible (avec rendement) : $231{,}6\,\text{kWh}$ (calcul\'ee \`a la question 4).
+
+Consommation du train : $5\,\text{kWh/km}$.
+\[
+\text{Distance parcourue} = \frac{231{,}6}{5} = 46{,}3\,\text{km}
+\]
+Chaque train transporte $200$ passagers :
+\[
+\text{Km-passagers} = 46{,}3 \times 200 = 9\,260\,\text{km-passagers}
+\]
+Autrement dit, on pourrait transporter 200 personnes sur environ 46 km, ou 1 personne sur environ 9260 km.
+}
+
+\tipbox{
+Ce probl\`eme est le plus important car il combine TOUT : conversions, formules d'\'energie, puissance, rendement. Guidez l'enfant question par question, sans sauter d'\'etape. \`A chaque \'etape, demandez : 1) Quelle formule utiliser ? 2) Quelles sont les donn\'ees ? 3) Sont-elles en unit\'es SI ? 4) On calcule. 5) Le r\'esultat est-il raisonnable ?
+}
+
+\tipbox{
+Le rendement est un nombre entre 0 et 1 (ou entre 0\,\% et 100\,\%). Il repr\'esente la fraction d'\'energie qui est r\'eellement convertie en forme utile. Un rendement de 85\,\% signifie que sur $100\,\text{J}$ d'\'energie potentielle, seuls $85\,\text{J}$ deviennent de l'\'energie \'electrique. Les $15\,\text{J}$ restants sont perdus (chaleur, frottements).
+}
+
+\tipbox{
+Pour la question 6, c'est un exercice de comparaison de puissances (pas d'\'energie). L'id\'ee cl\'e est que la puissance de la turbine doit \^etre \textbf{sup\'erieure} \`a la puissance demand\'ee par la locomotive. Ici, la locomotive demande 10 fois plus que ce que la turbine peut fournir. C'est une bonne occasion de discuter des ordres de grandeur.
+
+\vspace{0.2cm}
+Pour la question 7, le concept de \guillemotleft{} km-passager \guillemotright{} est une unit\'e utilis\'ee dans les transports. 1 km-passager = d\'eplacer 1 personne de 1 km. C'est utile pour comparer l'efficacit\'e de diff\'erents modes de transport.
+}
+
+\warnbox{
+Erreur classique : oublier d'appliquer le rendement (utiliser toute l'\'energie potentielle comme si elle devenait 100\,\% \'electrique). Autre erreur : convertir kWh en J avec $\times 1000$ au lieu de $\times 3\,600\,000$.
+
+\vspace{0.2cm}
+Erreur classique question 6 : diviser l'\'energie (en kWh) par la puissance de la locomotive (en MW) en m\'elangeant \'energie et puissance. Ici, c'est une comparaison de \textbf{puissances} : la turbine fournit-elle assez de puissance instantan\'ee pour alimenter la locomotive ?
+}
+
+%% ====================================================================
+\section*{Conseils g\'en\'eraux pour accompagner votre enfant}
+%% ====================================================================
+
+\begin{enumerate}
+\item \textbf{Ne donnez pas la r\'eponse directement.} Posez des questions : \guillemotleft{} Quelle formule pourrait t'aider ici ? \guillemotright{}, \guillemotleft{} As-tu v\'erifi\'e tes unit\'es ? \guillemotright{} (m\^eme si le probl\`eme semble amusant pour vous, le but est d'apprendre \`a l'enfant)
+\item \textbf{Valorisez le raisonnement, pas le r\'esultat.} Un calcul faux avec un bon raisonnement vaut mieux qu'un r\'esultat juste copi\'e.
+\item \textbf{Faites des pauses.} 15 \`a 20 minutes de travail concentr\'e suffisent. Au-del\`a, l'attention baisse.
+\item \textbf{Reliez aux situations du quotidien.} La facture d'\'electricit\'e utilise les kWh, la vitesse sur l'autoroute est en km/h, le poids sur la balance est en kg.
+\item \textbf{Encouragez l'auto-v\'erification.} Apr\`es chaque calcul : \guillemotleft{} Est-ce que ce r\'esultat te semble logique ? \guillemotright{}
+\item \textbf{Utilisez la m\'ethode des unit\'es.} Quand l'enfant ne sait pas quelle formule utiliser, demandez-lui de regarder les unit\'es du r\'esultat attendu et de trouver comment les obtenir \`a partir des donn\'ees.
+\item \textbf{Si besoin d'aide / erreur dans les fiches / idées d'amélioration :} Nathann Morand, +4179 552 14 15 (via WhatsApp, Telegram, Signal, Threema, pr\'ef\'erablement PAS par t\'el\'ephone) :)
+\end{enumerate}
+
+\end{document}

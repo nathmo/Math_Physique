@@ -1,0 +1,377 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{siunitx}
+\usepackage{tcolorbox}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+
+\geometry{margin=2cm}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\textbf{Parent Guide --- Answer Key and Tips}}
+\rhead{\thepage}
+
+\definecolor{correctgreen}{RGB}{40,140,40}
+\definecolor{tipblue}{RGB}{30,80,160}
+\definecolor{warnred}{RGB}{200,40,40}
+
+\tcbset{sharp corners, boxrule=0.8pt, left=6pt, right=6pt, top=4pt, bottom=4pt}
+
+\newcommand{\corrbox}[1]{
+\begin{tcolorbox}[colback=correctgreen!8!white,colframe=correctgreen!60!black]
+#1
+\end{tcolorbox}
+}
+
+\newcommand{\tipbox}[1]{
+\begin{tcolorbox}[colback=tipblue!8!white,colframe=tipblue!60!black,title=\textbf{How to explain}]
+#1
+\end{tcolorbox}
+}
+
+\newcommand{\warnbox}[1]{
+\begin{tcolorbox}[colback=warnred!8!white,colframe=warnred!60!black,title=\textbf{Common mistakes}]
+#1
+\end{tcolorbox}
+}
+
+\begin{document}
+
+\begin{center}
+{\LARGE \textbf{Parent Guide}}\\[0.3cm]
+{\large Answer Key and Teaching Tips}\\[0.2cm]
+{\normalsize To accompany the holiday workbook}
+\end{center}
+
+\vspace{0.5cm}
+
+\textbf{How to use this guide:}
+\begin{itemize}
+\item First let your child try each exercise on their own.
+\item If they get stuck, read the ``How to explain'' section before giving the answer.
+\item The common mistakes help you identify where the child goes wrong.
+\item Encourage step-by-step reasoning rather than focusing on the final result.
+\end{itemize}
+
+%% ====================================================================
+\section{Signed Numbers and Order of Operations}
+%% ====================================================================
+
+\corrbox{
+\begin{enumerate}
+\item $(-11) + (+7) = -4$ \quad (different signs: $11 - 7 = 4$, keep $-$ because $11 > 7$)
+\item $(3) + (-7) = -4$ \quad (different signs: $7 - 3 = 4$, keep $-$ because $7 > 3$)
+\item $(-2) - (-9) = -2 + 9 = +7$ \quad (subtracting a negative $=$ adding)
+\end{enumerate}
+}
+
+\tipbox{
+Imagine a number line (a thermometer). Adding a positive $=$ moving right/up. Adding a negative $=$ moving left/down. For subtraction, remember that subtracting means adding the opposite: $a - b = a + (-b)$. So $(-2) - (-9) = -2 + (+9)$. For order of operations, the mnemonic is: ``Parentheses first, then Exponents, then Multiplication/Division, then Addition/Subtraction''.
+}
+
+\warnbox{
+Classic mistake: confusing $(-11) + (+7)$ with $(-11) + (-7) = -18$. The child does not look at the sign of the second number. Ask: ``Is the $7$ positive or negative? Which direction do we go?''
+}
+
+%% ====================================================================
+\section{Multiplication and Distributivity}
+%% ====================================================================
+
+\corrbox{
+\begin{enumerate}
+\item $(-3) \times (+4) = -12$ \quad (different signs $\rightarrow$ negative)
+\item (no exercise 2)
+\item $4 \times (3 + 5) = 4 \times 3 + 4 \times 5 = 12 + 20 = 32$
+\item $(x + 3)^{2} = (x+3)(x+3) = x^{2} + 3x + 3x + 9 = x^{2} + 6x + 9$
+\item $(x + y)^{2} = x^{2} + 2xy + y^{2}$ \quad (notable identity)
+\item $(3 + 4)(3 - 4) = 3^{2} - 4^{2} = 9 - 16 = -7$. \\ Or directly: $7 \times (-1) = -7$
+\item $(x + y)(x - y) = x^{2} - y^{2}$ \quad (notable identity: difference of squares)
+\item $\dfrac{(x + y)(x - y)(x - y)}{(x + y)} = (x-y)(x-y) = (x-y)^{2} = x^{2} - 2xy + y^{2}$\\[0.2cm]
+We cancel $(x+y)$ in the numerator and denominator, then expand the remaining square.
+\end{enumerate}
+}
+
+\tipbox{
+For signs: ``negative times negative $=$ positive'' may seem arbitrary. Explain it with logic: if losing ($-$) a debt ($-$) is gaining ($+$). For distributivity, draw rectangles: the area of $a \times (b + c)$ is a large rectangle that can be split into $a \times b$ and $a \times c$.
+
+\vspace{0.2cm}
+For exercise 8, guide the child in two steps: first simplify the fraction (``cancel'' the common $(x+y)$), then expand what remains. It is a good exercise for combining fraction simplification and notable identities.
+}
+
+\warnbox{
+Classic mistake ex.~4: writing $(x + 3)^{2} = x^{2} + 9$ by forgetting the cross term $2 \times x \times 3 = 6x$. Remind them: $(a+b)^{2} \neq a^{2} + b^{2}$, the $2ab$ term in the middle is needed.
+
+\vspace{0.2cm}
+Classic mistake ex.~8: not daring to simplify the fraction. Remind them that $\dfrac{A \times B}{A} = B$ when $A \neq 0$.
+}
+
+%% ====================================================================
+\section{Fractions}
+%% ====================================================================
+
+\corrbox{
+\begin{enumerate}
+\item $\dfrac{3}{7} + \dfrac{2}{7} = \dfrac{5}{7}$ \quad (same denominator, add the numerators)
+\item $\dfrac{1}{3} + \dfrac{1}{4} = \dfrac{4}{12} + \dfrac{3}{12} = \dfrac{7}{12}$
+\item $\dfrac{2}{5} \times \dfrac{3}{4} = \dfrac{6}{20} = \dfrac{3}{10}$
+\item $\dfrac{3}{4} \div \dfrac{2}{3} = \dfrac{3}{4} \times \dfrac{3}{2} = \dfrac{9}{8}$
+\item $\dfrac{12}{18} = \dfrac{6 \times 2}{6 \times 3} = \dfrac{2}{3}$
+\item $\dfrac{1}{2} + \dfrac{2}{3} - \dfrac{1}{6} = \dfrac{3}{6} + \dfrac{4}{6} - \dfrac{1}{6} = \dfrac{6}{6} = 1$
+\item $\dfrac{xy}{x} + \dfrac{xz}{z} - \dfrac{yz}{y} = y + x - z = x + y - z$\\[0.2cm]
+We simplify each fraction separately: $\dfrac{xy}{x} = y$, \; $\dfrac{xz}{z} = x$, \; $\dfrac{yz}{y} = z$.
+\end{enumerate}
+}
+
+\tipbox{
+Use slices of pizza or cake. $\frac{1}{3}$ means a cake cut into 3 pieces, and we take 1 piece. To find a common denominator: ``we cut the pieces smaller so that all pieces are the same size.'' For dividing by a fraction: ``dividing by $\frac{2}{3}$ means asking how many times $\frac{2}{3}$ fits into my quantity --- flip and multiply.''
+
+\vspace{0.2cm}
+For exercise 7, the child must recognise that each fraction simplifies individually first. This is a good habit to develop: ``before combining everything, simplify each piece.''
+}
+
+\warnbox{
+Classic mistake ex.~2: writing $\frac{1}{3} + \frac{1}{4} = \frac{2}{7}$ (adding numerators AND denominators). Remind them that you can only add pieces of the same size (same denominator).
+
+\vspace{0.2cm}
+Classic mistake ex.~7: trying to find a common denominator without simplifying first. Here, each fraction reduces directly.
+}
+
+%% ====================================================================
+\section{Exponents}
+%% ====================================================================
+
+\corrbox{
+\begin{enumerate}
+\item $3^{2} \times 3^{3} = 3^{2+3} = 3^{5} = 243$
+\item $\dfrac{5^{6}}{5^{4}} = 5^{6-4} = 5^{2} = 25$
+\item $(2^{3})^{2} = 2^{3 \times 2} = 2^{6} = 64$
+\item $(3 \times 4)^{2} = 3^{2} \times 4^{2} = 9 \times 16 = 144$
+\item $10^{-2} = \dfrac{1}{10^{2}} = \dfrac{1}{100} = 0.01$
+\item $7^{0} = 1$
+\item $\left(\dfrac{xy}{3z}\right)^{3} \times \left(\dfrac{1}{zyx}\right)^{2}$\\[0.3cm]
+We expand each power separately:
+\[
+\left(\dfrac{xy}{3z}\right)^{3} = \dfrac{x^{3}y^{3}}{27z^{3}}
+\qquad\text{and}\qquad
+\left(\dfrac{1}{xyz}\right)^{2} = \dfrac{1}{x^{2}y^{2}z^{2}}
+\]
+Then we multiply:
+\[
+\dfrac{x^{3}y^{3}}{27z^{3}} \times \dfrac{1}{x^{2}y^{2}z^{2}} = \dfrac{x^{3}y^{3}}{27\,x^{2}y^{2}z^{5}} = \dfrac{xy}{27z^{5}}
+\]
+We simplify: $x^{3}/x^{2} = x$, \; $y^{3}/y^{2} = y$, \; $z^{3} \times z^{2} = z^{5}$.
+\end{enumerate}
+}
+
+\tipbox{
+Always go back to the definition: $a^{3} = a \times a \times a$. If the child does not understand $a^{m} \times a^{n} = a^{m+n}$, write out the factors one by one: $3^{2} \times 3^{3} = (3 \times 3) \times (3 \times 3 \times 3) = 3^{5}$. For negative exponents: ``a negative exponent puts the number in the denominator of a fraction.'' For $a^{0} = 1$: ``if we divide $a^{1}$ by $a^{1}$, we get $a^{0} = \frac{a}{a} = 1$.''
+
+\vspace{0.2cm}
+For exercise 7, the strategy is: 1) apply the exponent to each factor of the numerator and denominator, 2) multiply the two fractions, 3) simplify matching variables in the numerator and denominator using the rule $a^{m}/a^{n} = a^{m-n}$.
+}
+
+\warnbox{
+Classic mistake ex.~1: writing $3^{2} \times 3^{3} = 9^{5}$ or $3^{6}$. We add the EXPONENTS, not the bases, and we do not multiply the exponents (that is for a power of a power).
+
+\vspace{0.2cm}
+Classic mistake ex.~7: forgetting to apply the exponent to the coefficient $3$ (writing $3z^{3}$ instead of $27z^{3}$). Remind them that $(3z)^{3} = 3^{3} \times z^{3} = 27z^{3}$.
+}
+
+%% ====================================================================
+\section{SI Units and Conversions}
+%% ====================================================================
+
+\corrbox{
+\begin{enumerate}
+\item $3.5\,\text{km} = 3500\,\text{m}$ \quad ($\times 1000$)
+\item $250\,\text{g} = 0.250\,\text{kg}$ \quad ($\div 1000$)
+\item $2\,\text{h} = 7200\,\text{s}$ \quad ($\times 3600$)
+\item $36\,\text{km/h} = 36 \times \dfrac{1000}{3600} = \dfrac{36}{3.6} = 10\,\text{m/s}$
+\item $50\,\text{cm}^{2} = 50 \times 10^{-4}\,\text{m}^{2} = 0.0050\,\text{m}^{2}$ \quad (areas $\rightarrow$ factor $10^{-4}$ between cm$^{2}$ and m$^{2}$)
+\item $\dfrac{\text{kg} \cdot \text{m}}{\text{s}^{2}} = \text{Newton (N)}$
+\item $\dfrac{\text{J}}{\text{s}} = \text{Watt (W)}$
+\item $35\,\text{m}^{3} \text{ of water} = 35 \times 1000 = 35\,000\,\text{kg}$\\[0.1cm]
+Using $m = \rho \times V$ with $\rho_{\text{water}} = 1000\,\text{kg/m}^{3}$.
+\item $27\,\text{m}^{2} = 27 \times 10^{4}\,\text{cm}^{2} = 270\,000\,\text{cm}^{2}$\\[0.1cm]
+(Areas: $1\,\text{m}^{2} = 10\,000\,\text{cm}^{2}$)
+\item $27\,\text{m}^{3} = 27 \times 10^{6}\,\text{cm}^{3} = 27\,000\,000\,\text{cm}^{3}$\\[0.1cm]
+(Volumes: $1\,\text{m}^{3} = 10^{6}\,\text{cm}^{3}$, because $100^{3} = 10^{6}$)
+\item $16\,\text{kWh} = 16 \times 3.6 \times 10^{6}\,\text{J} = 57.6 \times 10^{6}\,\text{J} = 5.76 \times 10^{7}\,\text{J}$
+\end{enumerate}
+}
+
+\tipbox{
+For simple conversions (lengths, masses), use the conversion table with columns km\,|\,hm\,|\,dam\,|\,m\,|\,dm\,|\,cm\,|\,mm. For km/h $\rightarrow$ m/s, remember the rule: divide by $3.6$. For areas and volumes, emphasise that $1\,\text{m}^{2} = 10\,000\,\text{cm}^{2}$ (not $100$!). Draw a square with $1\,\text{m}$ sides $= 100\,\text{cm}$ sides, so $100 \times 100 = 10\,000\,\text{cm}^{2}$.
+
+\vspace{0.2cm}
+For exercise 8, this is an opportunity to introduce density: $\rho = m/V$, so $m = \rho \times V$. For water, $\rho = 1000\,\text{kg/m}^{3}$, meaning $1\,\text{m}^{3}$ of water weighs $1000\,\text{kg}$ (one tonne).
+}
+
+\warnbox{
+Common mistake ex.~5: writing $50\,\text{cm}^{2} = 0.50\,\text{m}^{2}$ (dividing by $100$ instead of $10\,000$). Remember: for areas, shift TWO digits per column; for volumes, THREE.
+
+\vspace{0.2cm}
+Common mistake ex.~11: converting kWh to J with $\times 1000$ instead of $\times 3\,600\,000$. Recall that kWh $= 1000\,\text{W} \times 3600\,\text{s} = 3.6 \times 10^{6}\,\text{J}$.
+}
+
+%% ====================================================================
+\section{Energy}
+%% ====================================================================
+
+\corrbox{
+\begin{enumerate}
+\item $E_p = mgh = 3 \times 9.81 \times 4 = 117.72\,\text{J}$
+\item $E_c = \frac{1}{2}mv^{2} = 0.5 \times 0.5 \times 6^{2} = 0.5 \times 0.5 \times 36 = 9\,\text{J}$
+\item $E_{th} = mc\Delta T = 2 \times 4180 \times (50 - 20) = 2 \times 4180 \times 30 = 250\,800\,\text{J}$
+\item $E_{el} = UIt = 12 \times 0.5 \times (5 \times 60) = 12 \times 0.5 \times 300 = 1800\,\text{J}$
+\item $E_p = E_c \;\Rightarrow\; mgh = \frac{1}{2}mv^{2} \;\Rightarrow\; v = \sqrt{2gh} = \sqrt{2 \times 9.81 \times 5} = \sqrt{98.1} \approx 9.9\,\text{m/s}$
+\item $E_{\text{el}} = \frac{1}{2}kx^{2} = 0.5 \times 100 \times 0.1^{2} = 0.5 \times 100 \times 0.01 = 0.5\,\text{J}$
+\item Water rocket reaching $60\,\text{m}$ altitude:
+\[E_p = E_c \;\Rightarrow\; mgh = \frac{1}{2}mv^{2} \;\Rightarrow\; v = \sqrt{2gh} = \sqrt{2 \times 9.81 \times 60} = \sqrt{1177.2} \approx 34.3\,\text{m/s}\]
+Mass cancels on both sides, so the initial velocity does not depend on the rocket's mass.\\
+$34.3\,\text{m/s} \approx 123\,\text{km/h}$ --- that's fast for a water rocket!
+\end{enumerate}
+}
+
+\tipbox{
+For each formula, have the child identify the quantities BEFORE calculating: ``What is $m$? What is $g$? What is $h$?'' Then check the units BEFORE doing the calculation. For exercises 5 and 7, guide step by step: first write $E_p = E_c$, then substitute, then cancel $m$ on both sides, then isolate $v$.
+
+\vspace{0.2cm}
+For exercise 7, emphasise that the rocket goes up by converting its kinetic energy (speed) into potential energy (height). At the top, all speed has been converted to height. It is the same reasoning as exercise 5, but ``in reverse'': we know the height and we are looking for the launch speed.
+}
+
+\warnbox{
+Common mistake ex.~4: forgetting to convert $5\,\text{min}$ to seconds. Remind them of the ABSOLUTE RULE: everything in SI before calculating. Mistake ex.~2: forgetting the $\frac{1}{2}$ in front of $mv^{2}$ or forgetting to square $v$.
+
+\vspace{0.2cm}
+Common mistake ex.~7: thinking you need to know the rocket's mass. The mass cancels! If the child is stuck, ask them to write $mgh = \frac{1}{2}mv^{2}$ and look at what can be cancelled.
+}
+
+%% ====================================================================
+\section{Power and Work}
+%% ====================================================================
+
+\corrbox{
+\begin{enumerate}
+\item $P = \dfrac{E}{t} = \dfrac{5000}{10} = 500\,\text{W}$
+\item $E = P \times t = 60 \times (3 \times 3600) = 60 \times 10\,800 = 648\,000\,\text{J}$. \\ In kWh: $E = 0.060\,\text{kW} \times 3\,\text{h} = 0.18\,\text{kWh}$
+\item $P = \dfrac{mgh}{t} = \dfrac{600 \times 9.81 \times 8}{10} = \dfrac{47\,088}{10} = 4708.8\,\text{W} \approx 4.71\,\text{kW}$
+\item Power: $P = Fv = 40 \times 7 = 280\,\text{W}$\\[0.2cm]
+Energy for 1 km: $W = F \times d = 40 \times 1000 = 40\,000\,\text{J} = 40\,\text{kJ}$\\[0.1cm]
+(Or: $t = d/v = 1000/7 \approx 142.9\,\text{s}$, then $E = P \times t = 280 \times 142.9 = 40\,000\,\text{J}$)
+\item $2\,\text{kWh} = 2 \times 3.6 \times 10^{6} = 7.2 \times 10^{6}\,\text{J} = 7\,200\,000\,\text{J}$
+\item Heater: $E = P \times t = 1500 \times (30 \times 60) = 1500 \times 1800 = 2\,700\,000\,\text{J} = 2.7\,\text{MJ}$
+\item[7.] Car at $120\,\text{km/h}$ with drag force of $400\,\text{N}$:\\[0.2cm]
+Conversion: $120\,\text{km/h} = \dfrac{120}{3.6} = 33.3\,\text{m/s}$\\[0.2cm]
+Power: $P = Fv = 400 \times 33.3 = 13\,333\,\text{W} \approx 13.3\,\text{kW}$\\[0.2cm]
+Energy for 1 km: $W = F \times d = 400 \times 1000 = 400\,000\,\text{J} = 400\,\text{kJ}$
+\end{enumerate}
+}
+
+\tipbox{
+The tap/faucet analogy works well: power is the flow rate of water, energy is the total amount of water that flows. A big tap (high power) fills the bucket (energy) faster. For kWh $\rightarrow$ J: remind them that kWh means kW $\times$ h $= 1000\,\text{W} \times 3600\,\text{s} = 3\,600\,000\,\text{J}$.
+
+\vspace{0.2cm}
+For exercises 4 and 7 (energy to travel 1 km), there are two methods:
+\begin{itemize}
+\item Direct method: $W = F \times d$ (work = force $\times$ distance)
+\item Indirect method: calculate time with $t = d/v$, then $E = P \times t$
+\end{itemize}
+Both give the same result. The direct method is simpler here.
+}
+
+\warnbox{
+Common mistake ex.~2: mixing units (using $t$ in hours in $P = E/t$ which requires seconds, or using $P$ in W when you want kWh). Tip: for kWh, keep $P$ in kW and $t$ in h; for J, keep $P$ in W and $t$ in s.
+
+\vspace{0.2cm}
+Common mistake ex.~7: forgetting to convert $120\,\text{km/h}$ to m/s before using $P = Fv$. The result would then be off by a factor of $3.6$.
+}
+
+%% ====================================================================
+\section{Integrated Problem --- Mini Hydroelectric Plant}
+%% ====================================================================
+
+\corrbox{
+\textbf{Question 1:} Mass of water
+\[m = \rho \times V = 1000 \times 2000 = 2\,000\,000\,\text{kg} = 2 \times 10^{6}\,\text{kg}\]
+
+\textbf{Question 2:} Potential energy
+\[E_p = mgh = 2 \times 10^{6} \times 9.81 \times 50 = 981\,000\,000\,\text{J} = 9.81 \times 10^{8}\,\text{J}\]
+
+\textbf{Question 3:} Electrical energy (with efficiency)
+\[E_{\text{el}} = E_p \times \text{efficiency} = 9.81 \times 10^{8} \times 0.85 = 8.34 \times 10^{8}\,\text{J} \approx 834\,000\,000\,\text{J}\]
+
+\textbf{Question 4:} Conversion to kWh
+\[E_{\text{el}} = \frac{8.34 \times 10^{8}}{3.6 \times 10^{6}} \approx 231.6\,\text{kWh}\]
+
+\textbf{Question 5:} Operating time
+\[t = \frac{E}{P} = \frac{8.34 \times 10^{8}}{200 \times 10^{3}} = 4169\,\text{s} \approx 1.16\,\text{h} \text{ (about 1h10)}\]
+
+\textbf{Question 6:} Number of locomotives
+\[
+P_{\text{turbine}} = 200\,\text{kW} = 0.2\,\text{MW}
+\qquad
+P_{\text{locomotive}} = 2\,\text{MW}
+\]
+\[
+\frac{0.2\,\text{MW}}{2\,\text{MW}} = 0.1
+\]
+The turbine cannot even start \textbf{a single locomotive}. It would need 10 times more power. (The turbine produces $200\,\text{kW}$; the locomotive requires $2000\,\text{kW}$.)
+
+\textbf{Question 7:} Passenger-km with the lake's energy
+
+Available electrical energy (with efficiency): $231.6\,\text{kWh}$ (calculated in question 4).
+
+Train consumption: $5\,\text{kWh/km}$.
+\[
+\text{Distance} = \frac{231.6}{5} = 46.3\,\text{km}
+\]
+Each train carries $200$ passengers:
+\[
+\text{Passenger-km} = 46.3 \times 200 = 9\,260\,\text{passenger-km}
+\]
+In other words, you could transport 200 people over about 46 km, or 1 person over about 9260 km.
+}
+
+\tipbox{
+This problem is the most important because it combines EVERYTHING: conversions, energy formulas, power, efficiency. Guide the child question by question, without skipping steps. At each step, ask: 1) Which formula to use? 2) What are the given values? 3) Are they in SI units? 4) Calculate. 5) Does the result seem reasonable?
+}
+
+\tipbox{
+Efficiency is a number between 0 and 1 (or between 0\% and 100\%). It represents the fraction of energy that is actually converted into useful form. An efficiency of 85\% means that out of $100\,\text{J}$ of potential energy, only $85\,\text{J}$ become electrical energy. The remaining $15\,\text{J}$ are lost (heat, friction).
+}
+
+\tipbox{
+For question 6, this is a power comparison exercise (not energy). The key idea is that the turbine's power must be \textbf{greater than} the power demanded by the locomotive. Here, the locomotive demands 10 times more than the turbine can provide. This is a good opportunity to discuss orders of magnitude.
+
+\vspace{0.2cm}
+For question 7, the concept of ``passenger-km'' is a unit used in transportation. 1 passenger-km = moving 1 person by 1 km. It is useful for comparing the efficiency of different transport modes.
+}
+
+\warnbox{
+Common mistake: forgetting to apply efficiency (using all potential energy as if it became 100\% electrical). Another mistake: converting kWh to J with $\times 1000$ instead of $\times 3\,600\,000$.
+
+\vspace{0.2cm}
+Common mistake question 6: dividing energy (in kWh) by locomotive power (in MW), mixing energy and power. Here, it is a \textbf{power} comparison: does the turbine provide enough instantaneous power to run the locomotive?
+}
+
+%% ====================================================================
+\section*{General Tips for Supporting Your Child}
+%% ====================================================================
+
+\begin{enumerate}
+\item \textbf{Don't give the answer directly.} Ask questions: ``Which formula could help here?'', ``Did you check your units?'' (even if the problem seems fun to you, the goal is for the child to learn)
+\item \textbf{Value the reasoning, not the result.} A wrong calculation with good reasoning is better than a correct answer that was copied.
+\item \textbf{Take breaks.} 15 to 20 minutes of focused work is enough. Beyond that, attention drops.
+\item \textbf{Connect to everyday life.} The electricity bill uses kWh, highway speed is in km/h, weight on the scale is in kg.
+\item \textbf{Encourage self-checking.} After each calculation: ``Does this result seem logical to you?''
+\item \textbf{Use the units method.} When the child doesn't know which formula to use, ask them to look at the units of the expected result and figure out how to get them from the given data.
+\item \textbf{If you need help / errors in the worksheets / suggestion and improvments :} Nathann Morand, +4179 552 14 15 (via WhatsApp, Telegram, Signal, Threema, preferably NOT by phone)
+\end{enumerate}
+
+\end{document}
