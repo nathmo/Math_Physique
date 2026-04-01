@@ -1,0 +1,41 @@
+name: Compile LaTeX to PDF
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Compile RevisionHomeworkEN.tex
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: RevisionHomeworkEN.tex
+
+      - name: Compile RevisionHomeworkENParentGuide.tex
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: RevisionHomeworkENParentGuide.tex
+
+      - name: Compile RevisionHomeworkFR.tex
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: RevisionHomeworkFR.tex
+
+      - name: Compile RevisionHomeworkFRParentGuide.tex
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: RevisionHomeworkFRParentGuide.tex
+
+      - name: Upload PDFs as artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: compiled-pdfs
+          path: "*.pdf"
